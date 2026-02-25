@@ -1,0 +1,8 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><radialGradient id="d" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(55 42) rotate(45) scale(122)"><stop stop-color="#8DEBFF"/><stop offset="1" stop-color="#1A8CFF"/></radialGradient></defs>
+  <circle cx="80" cy="80" r="66" fill="url(#d)"/>
+  <rect x="54" y="34" width="8" height="92" rx="4" fill="#EAF7FF"/>
+  <path d="M62 40C79 30 93 53 112 42V80C94 90 80 67 62 77V40Z" fill="#EAF7FF"/>
+  <path d="M74 50L79 60H90L81 66L85 76L74 70L63 76L67 66L58 60H69L74 50Z" fill="#1A8CFF"/>
+  <circle cx="80" cy="80" r="74" stroke="#B8EDFF" stroke-opacity="0.6" stroke-width="4"/>
+</svg>

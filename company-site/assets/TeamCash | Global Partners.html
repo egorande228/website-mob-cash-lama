@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamCash | Global Partners</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800;900&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    <style>
+        /* ========================================= 
+           1. ESTILOS BASE (ULTIMATE VERSION)
+           ========================================= */
+        :root {
+            --bg-body: #121212; --bg-card: #1E1E1E; --bg-dark: #000000;
+            --accent: #FFD700; --text-white: #FFFFFF; --text-gray: #B0B0B0;
+            --shadow-gold: 0 0 15px rgba(255, 215, 0, 0.3);
+        }
+        * { box-sizing: border-box; }
+        body { font-family: 'Roboto', sans-serif; background-color: var(--bg-body); color: var(--text-white); margin: 0; padding: 0; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 800; text-transform: uppercase; margin: 0; letter-spacing: 1px; }
+        p { color: var(--text-gray); line-height: 1.6; }
+        a { text-decoration: none; transition: 0.3s; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .text-gold { color: var(--accent); text-shadow: 0 0 10px rgba(255, 215, 0, 0.2); }
+        .section-pad { padding: 90px 0; }
+        
+        .btn-main { 
+            background: linear-gradient(45deg, #FFD700, #FDB931); 
+            color: #000; padding: 15px 40px; font-weight: 900; border-radius: 5px; 
+            display: inline-block; margin-top: 20px; border: none; cursor: pointer;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4); text-transform: uppercase;
+            font-family: 'Montserrat'; transition: 0.3s;
+        }
+        .btn-main:hover { transform: translateY(-3px) scale(1.05); box-shadow: 0 0 30px rgba(255, 215, 0, 0.6); }
+
+        footer { background: #000; padding: 50px 0; text-align: center; color: #666; border-top: 1px solid #222; }
+
+        /* HEADER & NAV */
+        .top-bar { background-color: #000; padding: 8px 0; font-size: 0.8rem; border-bottom: 1px solid #222; position: relative; z-index: 1001; }
+        .top-bar-flex { display: flex; justify-content: space-between; align-items: center; }
+        .selector a { color: #666; font-weight: bold; padding: 0 8px; cursor: pointer; transition: 0.2s; }
+        .selector a.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+        .selector a:hover { color: #fff; }
+
+        header { background-color: transparent; padding: 15px 0; position: fixed; width: 100%; top: 35px; z-index: 1000; transition: 0.4s ease; }
+        header.scrolled { background-color: rgba(10, 10, 10, 0.95); border-bottom: 1px solid #333; backdrop-filter: blur(15px); top: 0; padding: 10px 0; }
+        .navbar { display: flex; justify-content: space-between; align-items: center; }
+        .logo-box { background: var(--accent); color: #000; padding: 8px 20px; font-weight: 900; font-size: 1.3rem; border-radius: 4px; font-family: 'Montserrat'; letter-spacing: -1px; box-shadow: var(--shadow-gold); }
+        .nav-links a { color: #FFF; margin-left: 30px; font-size: 0.85rem; font-weight: 700; opacity: 0.8; }
+        .nav-links a:hover { color: var(--accent); opacity: 1; }
+
+        /* HERO PARTICLES */
+        .hero { 
+            position: relative; 
+            background: linear-gradient(to right, rgba(18,18,18,0.95), rgba(18,18,18,0.7)), url('img/negocios.png'); 
+            background-size: cover; background-position: center; 
+            height: 90vh; display: flex; align-items: center; 
+            overflow: hidden;
+        }
+        #particles-js { position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 1; }
+        .hero .container { position: relative; z-index: 2; }
+        .hero-badge { background: rgba(255, 215, 0, 0.1); border: 1px solid var(--accent); color: var(--accent); padding: 5px 15px; font-weight: bold; font-size: 0.8rem; border-radius: 50px; display: inline-block; margin-bottom: 15px; }
+        .hero h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 20px; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        /* SECTIONS */
+        .partners-bar { background-color: #000; padding: 0; border-bottom: 1px solid #222; text-align: center; }
+        .partners-img { width: 100%; max-width: 1200px; height: auto; display: block; margin: 0 auto; opacity: 0.8; transition: 0.3s; }
+        .partners-img:hover { opacity: 1; }
+
+        .stats-grid { display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 20px; padding: 50px 0; background: #151515; border-bottom: 1px solid #222; }
+        .stat-item { flex: 1; min-width: 200px; }
+        .stat-num { font-size: 3rem; font-weight: 900; color: var(--accent); font-family: 'Montserrat'; display: block; margin-bottom: 5px; }
+        .stat-label { font-size: 0.8rem; font-weight: 700; color: #666; letter-spacing: 2px; text-transform: uppercase; }
+
+        /* VIP SECTION */
+        .vip-section { background: var(--bg-body); }
+        .vip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; margin-top: 50px; }
+        .vip-card { background: linear-gradient(145deg, #1f1f1f, #181818); padding: 40px 30px; border-radius: 15px; border: 1px solid #333; text-align: center; transition: 0.4s; }
+        .vip-card:hover { transform: translateY(-10px); border-color: var(--accent); box-shadow: var(--shadow-gold); }
+        .vip-icon { font-size: 3rem; color: var(--accent); margin-bottom: 20px; }
+        .vip-card h3 { font-size: 1.2rem; color: #fff; margin-bottom: 15px; }
+        .vip-card p { font-size: 0.9rem; color: #888; }
+
+        /* ABOUT & ACADEMY */
+        .about-section { background-color: #151515; }
+        .split-layout { display: flex; align-items: center; gap: 60px; flex-wrap: wrap; }
+        .about-text { flex: 1; min-width: 300px; }
+        .about-image { flex: 1; min-width: 300px; position: relative; }
+        .about-image img { width: 100%; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); border: 2px solid #333; }
+        
+        .video-container { text-align: center; margin: 50px 0; }
+        .styled-video { width: 100%; max-width: 900px; border-radius: 20px; border: 2px solid #333; box-shadow: 0 20px 60px rgba(0,0,0,0.7); }
+        .academy-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .card-dark { background: var(--bg-card); padding: 0; border-radius: 12px; border: 1px solid #333; transition: 0.3s; cursor: pointer; overflow: hidden; position: relative; }
+        .card-dark:hover { transform: translateY(-7px); border-color: var(--accent); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .card-content { padding: 25px; }
+        .tuto-img { width: 100%; height: 200px; object-fit: cover; opacity: 0.8; transition: 0.3s; }
+        .card-dark:hover .tuto-img { opacity: 1; transform: scale(1.05); }
+
+        /* FORM PREMIUM */
+        .form-section-premium { background: #000; border-top: 1px solid #222; position: relative; overflow: hidden; }
+        .form-section-premium::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,215,0,0.05) 0%, rgba(0,0,0,0) 50%); pointer-events: none; }
+        .form-box-premium { max-width: 800px; margin: 0 auto; background: #1a1a1a; padding: 60px; border-radius: 20px; border: 1px solid #333; box-shadow: 0 30px 80px rgba(0,0,0,0.8); position: relative; z-index: 2; }
+        .form-header-flex { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 40px; }
+        .form-title h2 { color: var(--accent); font-size: 2rem; font-weight: 300; letter-spacing: 2px; margin-bottom: 10px; }
+        .social-row a { color: #666; margin-left: 10px; font-size: 1.5rem; transition: 0.3s; }
+        .social-row a:hover { color: var(--accent); transform: scale(1.2); }
+
+        .input-label-premium { display: block; color: #fff; font-size: 0.9rem; margin-bottom: 10px; font-weight: 600; letter-spacing: 0.5px; }
+        .input-premium { width: 100%; background: #111; border: 1px solid #444; color: #fff; padding: 18px; border-radius: 8px; font-size: 1rem; margin-bottom: 30px; transition: 0.3s; font-family: 'Roboto'; }
+        .input-premium:focus { border-color: var(--accent); outline: none; background: #000; box-shadow: 0 0 10px rgba(255,215,0,0.1); }
+        .contact-methods { display: flex; gap: 15px; margin-bottom: 30px; }
+        .method-btn { flex: 1; padding: 15px; background: #222; border: 1px solid #444; color: #888; font-weight: 700; cursor: pointer; border-radius: 8px; transition: 0.3s; text-transform: uppercase; font-size: 0.85rem; }
+        .method-btn.active { background: var(--accent); color: #000; border-color: var(--accent); box-shadow: var(--shadow-gold); }
+        .method-btn:hover:not(.active) { border-color: #fff; color: #fff; }
+        .btn-submit-outline { width: 100%; padding: 18px; background: transparent; border: 2px solid var(--accent); color: var(--accent); font-weight: 800; letter-spacing: 2px; cursor: pointer; transition: 0.3s; font-size: 1.1rem; text-transform: uppercase; border-radius: 8px; }
+        .btn-submit-outline:hover { background: var(--accent); color: #000; box-shadow: var(--shadow-gold); }
+        
+        @media (max-width: 600px) { .contact-methods { flex-direction: column; gap: 10px; } .hero h1 { font-size: 2.5rem; } .stats-grid { flex-direction: column; } }
+
+        /* WIDGET & NOTIFICATIONS & MODALS */
+        .chat-widget-btn { 
+            position: fixed; bottom: 30px; right: 30px; width: 65px; height: 65px; 
+            background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; 
+            color: #fff; z-index: 2001; box-shadow: 0 4px 20px rgba(0,0,0,0.6); cursor: pointer; 
+            border: 2px solid #fff; animation: pulse-green 2s infinite; 
+        }
+        @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); transform: scale(1); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); transform: scale(1.05); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); transform: scale(1); } }
+
+        .chat-widget-window { position: fixed; bottom: 110px; right: 30px; width: 350px; background: #1a1a1a; border-radius: 15px; box-shadow: 0 20px 60px rgba(0,0,0,0.8); z-index: 2000; display: none; border: 1px solid #333; overflow: hidden; }
+        .chat-widget-window.active { display: block; animation: fadeInUp 0.4s ease; }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .widget-header { background: #111; padding: 20px; color: #fff; font-weight: bold; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; }
+        .close-widget { background: none; border: none; color: #888; font-size: 24px; cursor: pointer; }
+        .widget-body { padding: 25px; }
+        .widget-menu a { display: flex; align-items: center; background: #222; padding: 15px; border-radius: 10px; color: #fff; transition: 0.3s; border: 1px solid #333; margin-bottom: 10px; font-weight: 500; }
+        .widget-menu a:hover { background: #333; border-color: var(--accent); transform: translateX(5px); }
+        .widget-icon { font-size: 1.4rem; margin-right: 15px; width: 30px; text-align: center; }
+
+        /* NOTIFICATION TOAST */
+        .notification-toast {
+            position: fixed; bottom: 30px; left: 30px; background: rgba(20, 20, 20, 0.95);
+            border-left: 4px solid var(--accent); color: #fff; padding: 15px 25px;
+            border-radius: 5px; box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 3000; display: flex; align-items: center; gap: 15px;
+            transform: translateX(-150%); transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            max-width: 320px; font-size: 0.9rem; backdrop-filter: blur(5px);
+        }
+        .notification-toast.show { transform: translateX(0); }
+        .toast-icon { color: var(--accent); font-size: 1.5rem; }
+        .toast-text strong { display: block; color: var(--accent); font-size: 0.8rem; margin-bottom: 3px; }
+
+        /* MODALS */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 4000; display: none; justify-content: center; align-items: flex-start; padding: 60px 20px; backdrop-filter: blur(8px); overflow-y: auto; }
+        .modal-content-box { background: #1a1a1a; width: 100%; max-width: 800px; border-radius: 20px; padding: 50px; border: 1px solid var(--accent); position: relative; box-shadow: 0 25px 80px rgba(255, 215, 0, 0.1); animation: zoomIn 0.3s ease; }
+        @keyframes zoomIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        .modal-close-btn-top { position: absolute; top: 20px; right: 25px; font-size: 2.5rem; color: #666; background: none; border: none; cursor: pointer; transition: 0.3s; }
+        .modal-close-btn-top:hover { color: #fff; transform: rotate(90deg); }
+        .guide-step { margin-bottom: 60px; border-bottom: 1px solid #333; padding-bottom: 40px; }
+        .step-number { color: var(--accent); font-weight: 900; font-size: 2rem; margin-right: 15px; font-family: 'Montserrat'; }
+        .guide-img-pro { width: 100%; border-radius: 15px; border: 2px solid #444; margin-top: 25px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+    </style>
+</head>
+<body>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <div class="top-bar">
+        <div class="container top-bar-flex">
+            <div class="selector">
+                <span style="color:#666; margin-right: 10px;">REGION:</span>
+                <a href='/'>LATAM</a> | 
+                <a href="asia.html">ASIA</a>
+            </div>
+            <div class="selector">
+                <i class="fa-solid fa-globe" style="color:var(--accent)"></i>
+                <a href='/'>ES</a>
+                <a class='active' href='/english'>EN</a>
+                <a href='/russian'>RU</a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container navbar">
+            <div class="logo-box">TEAM CASH <i class="fa-solid fa-bolt"></i></div>
+            <nav class="nav-links">
+                <a href="#about">ABOUT US</a>
+                <a href="#academy">ACADEMY</a>
+                <a href="#registro">REGISTER</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div id="particles-js"></div>
+        <div class="container animate__animated animate__fadeInUp">
+            <span class="hero-badge"><i class="fa-solid fa-check"></i> OFFICIAL PARTNERS</span>
+            <h1>YOUR GLOBAL <br><span class="text-gold">FINANCIAL PARTNER</span></h1>
+            <p style="font-size: 1.2rem; max-width: 600px;">Join the official agent network for Melbet and 1xBet. Manage capital, process payments, and earn daily commissions from your phone.</p>
+            <a href="#registro" class="btn-main">BECOME AN AGENT</a>
+        </div>
+    </section>
+
+    <section class="partners-bar">
+        <div class="container">
+            <img src="img/partners_banner.png" alt="Partners Banner" class="partners-img">
+        </div>
+    </section>
+
+    <section class="stats-grid">
+        <div class="stat-item"><span class="stat-num">5%</span><span class="stat-label">DEPOSIT COMMISSION</span></div>
+        <div class="stat-item"><span class="stat-num">2%</span><span class="stat-label">WITHDRAWAL COMMISSION</span></div>
+        <div class="stat-item"><span class="stat-num">$100</span><span class="stat-label">INITIAL CAPITAL</span></div>
+        <div class="stat-item"><span class="stat-num">24/7</span><span class="stat-label">LIVE SUPPORT</span></div>
+    </section>
+
+    <section class="section-pad" style="background: #121212;">
+        <div class="container">
+            <h2 style="text-align: center;">EXCLUSIVE <span class="text-gold">BENEFITS</span></h2>
+            <p style="text-align: center; color: #888;">Joining TeamCash gives you more than just an app.</p>
+            <div class="vip-grid">
+                <div class="vip-card">
+                    <i class="fa-solid fa-rocket vip-icon"></i>
+                    <h3>Quick Start</h3>
+                    <p>Activate your account in less than 24 hours with simplified verification.</p>
+                </div>
+                <div class="vip-card">
+                    <i class="fa-solid fa-briefcase vip-icon"></i>
+                    <h3>Marketing Kit</h3>
+                    <p>Get free banners and advertising guides to attract players.</p>
+                </div>
+                <div class="vip-card">
+                    <i class="fa-brands fa-bitcoin vip-icon"></i>
+                    <h3>Crypto Friendly</h3>
+                    <p>Top up and withdraw your earnings using USDT, Binance or Tron without blocks.</p>
+                </div>
+                <div class="vip-card">
+                    <i class="fa-solid fa-headset vip-icon"></i>
+                    <h3>Private Advisor</h3>
+                    <p>Direct access to an account manager via WhatsApp to solve any questions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pad about-section" id="about">
+        <div class="container split-layout">
+            <div class="about-text">
+                <span style="color: var(--accent); font-weight: bold; letter-spacing: 1px;">LIFESTYLE</span>
+                <h2 style="font-size: 2.5rem; margin: 10px 0 20px;">LIVE THE GAME</h2>
+                <p>While they play and win, you manage the cash flow. TeamCash allows you to operate your own financial business in the world of sports betting, from anywhere.</p>
+            </div>
+            <div class="about-image">
+                <img src="img/portada.png" alt="Lifestyle TeamCash">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pad" id="academy" style="background: #181818;">
+        <div class="container">
+            <h2>AGENT <span class="text-gold">ACADEMY</span></h2>
+            <div class="video-container">
+                <video class="styled-video" controls poster="img/app_operacion.png">
+                    <source src="img/tutorial.mp4" type="video/mp4">
+                    Your browser does not support video.
+                </video>
+            </div>
+            <div class="academy-grid">
+                <div class="card-dark" onclick="openModal('modal-tuto1')">
+                    <img src="img/verificacion_id.png" class="tuto-img">
+                    <div class="card-content">
+                        <h4>ID Verification</h4>
+                        <p style="font-size:0.9rem; color:var(--accent); margin-top:5px;">View guide <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </div>
+                <div class="card-dark" onclick="openModal('modal-tuto2')">
+                    <img src="img/carga_saldo.png" class="tuto-img">
+                    <div class="card-content">
+                        <h4>Load Balance</h4>
+                        <p style="font-size:0.9rem; color:var(--accent); margin-top:5px;">View guide <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </div>
+                <div class="card-dark" onclick="openModal('modal-tuto3')">
+                    <img src="img/app_operacion.png" class="tuto-img">
+                    <div class="card-content">
+                        <h4>How to Withdraw</h4>
+                        <p style="font-size:0.9rem; color:var(--accent); margin-top:5px;">View guide <i class="fa-solid fa-arrow-right"></i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-pad form-section-premium" id="registro">
+        <div class="container">
+            <div class="form-box-premium">
+                <div class="form-header-flex">
+                    <div class="form-title">
+                        <h2>BECOME PART OF OUR <br><span class="text-gold">GROWING NETWORK</span></h2>
+                        <p>We'll guide you in using our cash systems and attracting clients, staying with you at every stage of your growth.</p>
+                    </div>
+                    <div class="social-row">
+                        <a href="https://www.facebook.com/people/Valentina-Reclut/pfbid02g8qeJLcvmZDxHeGAFCZDs5kvTFkoujZjUtRE9fVKUSsWeVh5FT9EKGqaFhMrh4kKl/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/groups/3523566151286715" target="_blank"><i class="fa-solid fa-users"></i></a>
+                    </div>
+                </div>
+                <form>
+                    <label class="input-label-premium"><i class="fa-solid fa-user"></i> Your Name</label>
+                    <input type="text" class="input-premium" id="input-name" placeholder="Enter your full name">
+
+                    <label class="input-label-premium"><i class="fa-solid fa-address-book"></i> Contact Method</label>
+                    <div class="contact-methods">
+                        <button type="button" class="method-btn active" onclick="selectMethod('telegram')">TELEGRAM</button>
+                        <button type="button" class="method-btn" onclick="selectMethod('whatsapp')">WHATSAPP</button>
+                        <button type="button" class="method-btn" onclick="selectMethod('phone')">PHONE</button>
+                    </div>
+
+                    <label class="input-label-premium" id="contact-input-label"><i class="fa-brands fa-telegram"></i> Your Username</label>
+                    <input type="text" class="input-premium" id="input-contact" placeholder="@username or link">
+
+                    <label class="input-label-premium"><i class="fa-solid fa-language"></i> Preferred Language</label>
+                    <select class="input-premium" id="input-lang">
+                        <option value="English">English</option>
+                        <option value="Spanish">Spanish</option>
+                        <option value="Russian">Russian</option>
+                    </select>
+
+                    <button type="button" class="btn-submit-outline" onclick="submitFormPremium()">SUBMIT APPLICATION</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container"><p>&copy; 2025 TeamCash. All rights reserved.</p></div>
+    </footer>
+
+    <div id="toast" class="notification-toast">
+        <i class="fa-solid fa-circle-check toast-icon"></i>
+        <div class="toast-text">
+            <strong id="toast-title">New Agent</strong>
+            <span id="toast-msg">John D. registered in UK</span>
+        </div>
+    </div>
+
+    <div class="chat-widget-btn" onclick="toggleWidget()">
+        <i class="fa-brands fa-whatsapp" style="font-size: 32px;"></i>
+    </div>
+    <div class="chat-widget-window" id="chatWidget">
+        <div class="widget-header">
+            <span>TeamCash Support <i class="fa-solid fa-headset"></i></span>
+            <button class="close-widget" onclick="toggleWidget()">×</button>
+        </div>
+        <div class="widget-body">
+            <p style="color:#ccc; font-size:0.9rem; margin-bottom:15px;">How can we help you?</p>
+            <ul class="widget-menu">
+                <li><a href="#" onclick="sendToWhatsApp(); return false;"><i class="fa-brands fa-whatsapp widget-icon" style="color:#25D366;"></i><span>Chat with Advisor</span><i class="fa-solid fa-chevron-right arrow-icon"></i></a></li>
+                <li><a href="#academy" onclick="toggleWidget()"><i class="fa-solid fa-graduation-cap widget-icon" style="color:var(--accent);"></i><span>Watch Tutorials</span><i class="fa-solid fa-chevron-right arrow-icon"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-tuto1" class="modal-overlay" onclick="closeModal(event, 'modal-tuto1')">
+        <div class="modal-content-box">
+            <button class="modal-close-btn-top" onclick="closeModalForce('modal-tuto1')">×</button>
+            <h2 style="color: var(--accent); margin-bottom: 30px;">GUIDE: ID VERIFICATION</h2>
+            <div class="guide-step">
+                <h3><span class="step-number">01.</span> PREPARE YOUR DOCUMENT</h3>
+                <img src="img/guia_id_paso1.png" alt="Step 1" class="guide-img-pro">
+            </div>
+            <div class="guide-step">
+                <h3><span class="step-number">02.</span> SECURITY SELFIE</h3>
+                <img src="img/guia_id_paso2.png" alt="Step 2" class="guide-img-pro">
+            </div>
+            <div class="guide-step">
+                <h3><span class="step-number">03.</span> CONFIRMATION</h3>
+                <img src="img/guia_id_paso3.png" alt="Step 3" class="guide-img-pro">
+            </div>
+            <button onclick="closeModalForce('modal-tuto1')" class="btn-main" style="width:100%; margin-top:20px;">CLOSE GUIDE</button>
+        </div>
+    </div>
+
+    <div id="modal-tuto2" class="modal-overlay" onclick="closeModal(event, 'modal-tuto2')">
+        <div class="modal-content-box">
+            <button class="modal-close-btn-top" onclick="closeModalForce('modal-tuto2')">×</button>
+            <h2 style="color: var(--accent); margin-bottom: 30px;">GUIDE: LOAD BALANCE</h2>
+            <div class="guide-step">
+                <h3><span class="step-number">01.</span> CHOOSE METHOD</h3>
+                <img src="img/guia_saldo_paso1.png" alt="Step 1 Balance" class="guide-img-pro">
+            </div>
+            <div class="guide-step">
+                <h3><span class="step-number">02.</span> TRANSFER</h3>
+                <img src="img/guia_saldo_paso2.png" alt="Step 2 Balance" class="guide-img-pro">
+            </div>
+            <div class="guide-step">
+                <h3><span class="step-number">03.</span> BALANCE READY!</h3>
+                <img src="img/guia_saldo_paso3.png" alt="Step 3 Balance" class="guide-img-pro">
+            </div>
+            <button onclick="closeModalForce('modal-tuto2')" class="btn-main" style="width:100%; margin-top:20px;">CLOSE GUIDE</button>
+        </div>
+    </div>
+
+    <div id="modal-tuto3" class="modal-overlay" onclick="closeModal(event, 'modal-tuto3')">
+        <div class="modal-content-box">
+            <button class="modal-close-btn-top" onclick="closeModalForce('modal-tuto3')">×</button>
+            <h2 style="color: var(--accent); margin-bottom: 30px;">GUIDE: HOW TO WITHDRAW</h2>
+            <div class="guide-step">
+                <h3><span class="step-number">01.</span> WITHDRAW REQUEST</h3>
+                <p>Go to "Withdraw funds" and enter the Player ID.</p>
+                <img src="img/guia_retiro_paso1.png" alt="Step 1 Withdraw" class="guide-img-pro">
+            </div>
+            <div class="guide-step">
+                <h3><span class="step-number">02.</span> SECURITY CODE</h3>
+                <p>Enter the code the player received.</p>
+                <img src="img/guia_retiro_paso2.png" alt="Step 2 Code" class="guide-img-pro">
+            </div>
+            <button onclick="closeModalForce('modal-tuto3')" class="btn-main" style="width:100%; margin-top:20px;">CLOSE GUIDE</button>
+        </div>
+    </div>
+
+    <script>
+        // PARTICLES
+        particlesJS("particles-js", {
+          "particles": { "number": { "value": 50, "density": { "enable": true, "value_area": 800 } }, "color": { "value": "#FFD700" }, "shape": { "type": "circle" }, "opacity": { "value": 0.3, "random": false }, "size": { "value": 3, "random": true }, "line_linked": { "enable": true, "distance": 150, "color": "#FFD700", "opacity": 0.2, "width": 1 }, "move": { "enable": true, "speed": 2 } },
+          "interactivity": { "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" } } }, "retina_detect": true
+        });
+
+        // TOASTS (ENGLISH)
+        const fakeData = [
+            { name: "Michael S.", country: "UK", action: "withdrew $200 USD" },
+            { name: "Ahmed K.", country: "UAE", action: "registered as Agent" },
+            { name: "Sarah L.", country: "Canada", action: "deposited $1000 USDT" },
+            { name: "Raj P.", country: "India", action: "activated account" }
+        ];
+        function showToast() {
+            const toast = document.getElementById('toast');
+            const data = fakeData[Math.floor(Math.random() * fakeData.length)];
+            document.getElementById('toast-title').innerText = "Recent Activity";
+            document.getElementById('toast-msg').innerText = `${data.name} (${data.country}) ${data.action}`;
+            toast.classList.add('show');
+            setTimeout(() => { toast.classList.remove('show'); }, 4000);
+        }
+        setInterval(showToast, 8000);
+
+        // FORM LOGIC
+        let selectedMethod = 'telegram';
+        function selectMethod(method) {
+            selectedMethod = method;
+            document.querySelectorAll('.method-btn').forEach(btn => btn.classList.remove('active'));
+            const buttons = document.querySelectorAll('.method-btn');
+            if(method === 'telegram') { buttons[0].classList.add('active'); document.getElementById('contact-input-label').innerHTML = '<i class="fa-brands fa-telegram"></i> Telegram Username'; document.getElementById('input-contact').placeholder = '@username'; }
+            if(method === 'whatsapp') { buttons[1].classList.add('active'); document.getElementById('contact-input-label').innerHTML = '<i class="fa-brands fa-whatsapp"></i> WhatsApp Number'; document.getElementById('input-contact').placeholder = '+ CountryCode Number'; }
+            if(method === 'phone') { buttons[2].classList.add('active'); document.getElementById('contact-input-label').innerHTML = '<i class="fa-solid fa-phone"></i> Phone Number'; document.getElementById('input-contact').placeholder = '+ CountryCode Number'; }
+        }
+
+        function submitFormPremium() {
+            const name = document.getElementById('input-name').value;
+            const contact = document.getElementById('input-contact').value;
+            const lang = document.getElementById('input-lang').value;
+            if(!name || !contact) { alert("Please fill in all fields"); return; }
+            const message = `*NEW AGENT APPLICATION (GLOBAL)*\n\nName: ${name}\nMethod: ${selectedMethod.toUpperCase()}\nContact: ${contact}\nLanguage: ${lang}`;
+            window.open(`https://wa.me/79154237269?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // GENERAL
+        function openModal(modalId) { document.getElementById(modalId).style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+        function closeModal(event, modalId) { if (event.target.id === modalId) closeModalForce(modalId); }
+        function closeModalForce(modalId) { document.getElementById(modalId).style.display = 'none'; document.body.style.overflow = 'auto'; }
+        
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) header.classList.add('scrolled');
+            else { header.classList.remove('scrolled'); header.style.top = '35px'; }
+        });
+        document.addEventListener("DOMContentLoaded", function() { document.querySelector('header').style.top = '35px'; });
+        function toggleWidget() { document.getElementById('chatWidget').classList.toggle('active'); }
+        function sendToWhatsApp() { window.open(`https://wa.me/79154237269?text=Hello`, '_blank'); toggleWidget(); }
+    </script>
+</body>
+</html>

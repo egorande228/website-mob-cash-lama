@@ -1,0 +1,9 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><radialGradient id="b" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(48 38) rotate(45) scale(130)"><stop stop-color="#9CF3FF"/><stop offset="1" stop-color="#0D7AFF"/></radialGradient></defs>
+  <circle cx="80" cy="80" r="66" fill="url(#b)"/>
+  <path d="M14 80H146" stroke="#E7F6FF" stroke-width="6"/>
+  <path d="M80 14V146" stroke="#E7F6FF" stroke-width="6"/>
+  <path d="M34 34C60 58 60 102 34 126" stroke="#E7F6FF" stroke-width="6"/>
+  <path d="M126 34C100 58 100 102 126 126" stroke="#E7F6FF" stroke-width="6"/>
+  <circle cx="80" cy="80" r="74" stroke="#B8EDFF" stroke-opacity="0.6" stroke-width="4"/>
+</svg>

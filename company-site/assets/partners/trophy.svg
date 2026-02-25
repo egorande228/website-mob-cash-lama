@@ -1,0 +1,10 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs><radialGradient id="c" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(55 42) rotate(45) scale(122)"><stop stop-color="#8DEBFF"/><stop offset="1" stop-color="#1A8CFF"/></radialGradient></defs>
+  <circle cx="80" cy="80" r="66" fill="url(#c)"/>
+  <path d="M54 52H106V64C106 80 95 92 80 96C65 92 54 80 54 64V52Z" fill="#EAF7FF"/>
+  <rect x="72" y="95" width="16" height="20" rx="6" fill="#EAF7FF"/>
+  <rect x="62" y="114" width="36" height="10" rx="5" fill="#EAF7FF"/>
+  <path d="M54 56H44C39 56 36 60 36 64C36 73 42 79 50 79H55" stroke="#EAF7FF" stroke-width="6"/>
+  <path d="M106 56H116C121 56 124 60 124 64C124 73 118 79 110 79H105" stroke="#EAF7FF" stroke-width="6"/>
+  <circle cx="80" cy="80" r="74" stroke="#B8EDFF" stroke-opacity="0.6" stroke-width="4"/>
+</svg>
