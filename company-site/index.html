@@ -114,17 +114,35 @@
         </div>
       </section>
 
-      <section class="tc-split reveal" id="lifestyle">
-        <div class="tc-split-copy">
-          <span class="tc-kicker">Lifestyle</span>
-          <h2>Run Your Own Cash Flow Business</h2>
-          <p>
-            While players focus on the game, you focus on smart operations,
-            client service, and recurring commission growth.
-          </p>
+      <section class="tc-calculator reveal" id="lifestyle">
+        <div class="tc-calc-head">
+          <h2>Estimate Your <span>Income</span></h2>
+          <p>Based on the daily transaction volume (5% commission).</p>
         </div>
-        <div class="tc-split-media">
-          <img src="./assets/image.png" alt="Support manager desk" />
+        <div class="tc-calc-grid">
+          <article class="tc-calc-inputs">
+            <div class="tc-calc-row">
+              <div class="tc-calc-labels">
+                <label for="calc-volume">Daily Volume ($)</label>
+                <strong id="calc-volume-value">$200</strong>
+              </div>
+              <input id="calc-volume" type="range" min="50" max="5000" step="50" value="200" />
+            </div>
+
+            <div class="tc-calc-row">
+              <div class="tc-calc-labels">
+                <label for="calc-days">Operational Days</label>
+                <strong id="calc-days-value">5 days</strong>
+              </div>
+              <input id="calc-days" type="range" min="1" max="31" step="1" value="5" />
+            </div>
+          </article>
+
+          <article class="tc-calc-result" aria-live="polite">
+            <p class="tc-calc-title">Your Estimated Commission</p>
+            <p class="tc-calc-amount" id="calc-result">$50</p>
+            <p class="tc-calc-sub">USD MONTHLY</p>
+          </article>
         </div>
       </section>
 

@@ -53,6 +53,31 @@ if (heroMotion && floatInnerItems.length && window.matchMedia('(pointer: fine)')
   });
 }
 
+const calcVolume = document.getElementById('calc-volume');
+const calcDays = document.getElementById('calc-days');
+const calcVolumeValue = document.getElementById('calc-volume-value');
+const calcDaysValue = document.getElementById('calc-days-value');
+const calcResult = document.getElementById('calc-result');
+
+if (calcVolume && calcDays && calcVolumeValue && calcDaysValue && calcResult) {
+  const formatMoney = (value) => `$${Math.round(value).toLocaleString('en-US')}`;
+  const commissionRate = 0.05;
+
+  const updateCalculator = () => {
+    const volume = Number(calcVolume.value) || 0;
+    const days = Number(calcDays.value) || 0;
+    const result = volume * days * commissionRate;
+
+    calcVolumeValue.textContent = formatMoney(volume);
+    calcDaysValue.textContent = `${days} ${days === 1 ? 'day' : 'days'}`;
+    calcResult.textContent = formatMoney(result);
+  };
+
+  calcVolume.addEventListener('input', updateCalculator);
+  calcDays.addEventListener('input', updateCalculator);
+  updateCalculator();
+}
+
 let selectedMethod = 'telegram';
 const methodButtons = document.querySelectorAll('.tc-method');
 const contactLabel = document.getElementById('contact-input-label');
