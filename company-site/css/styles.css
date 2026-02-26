@@ -1882,6 +1882,22 @@ main,
   color: #7ad9ff;
 }
 
+.partner-media-client .sub-card-glyph {
+  color: #68ddff;
+}
+
+.partner-media-commission .sub-card-glyph {
+  color: #7be6ff;
+}
+
+.partner-media-weekly .sub-card-glyph {
+  color: #58d5ff;
+}
+
+.partner-media-growth .sub-card-glyph {
+  color: #4ad1ff;
+}
+
 .sub-card-copy h3 {
   margin: 0;
   font-family: "Montserrat", sans-serif;
