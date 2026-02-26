@@ -1623,6 +1623,13 @@ main,
   filter: none;
 }
 
+.partner-icon-crypto {
+  object-fit: contain;
+  object-position: center;
+  padding: 18px;
+  background: radial-gradient(circle at 50% 50%, rgba(14, 39, 95, 0.75), rgba(6, 20, 52, 0.95));
+}
+
 .hero-brand .brand-main {
   display: inline-block;
   margin-right: -0.08em;
