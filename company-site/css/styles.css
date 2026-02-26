@@ -1528,6 +1528,18 @@ main,
   margin: 0.9rem 0 0;
 }
 
+.sub-hero-agent .feature-band {
+  background: transparent;
+  clip-path: none;
+  padding: 0 0 0.65rem;
+  border-bottom: 1px solid rgba(76, 155, 255, 0.45);
+  color: #5ad8ff;
+  font-size: clamp(1.5rem, 3.8vw, 2.7rem);
+  letter-spacing: 0.03em;
+  width: fit-content;
+  min-width: min(100%, 520px);
+}
+
 .sub-hero-agent .cta {
   margin-top: 1.15rem;
 }
@@ -1687,6 +1699,12 @@ main,
     max-width: 520px;
     width: 100%;
     justify-self: center;
+  }
+
+  .sub-hero-agent .feature-band {
+    min-width: 0;
+    width: 100%;
+    font-size: clamp(1.25rem, 5vw, 1.9rem);
   }
 }
 
