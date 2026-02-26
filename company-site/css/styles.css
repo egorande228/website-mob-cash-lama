@@ -617,7 +617,7 @@ main,
 }
 
 .partners {
-  padding: 0.8rem 0 3.4rem;
+  padding: 0.9rem 0 3rem;
 }
 
 .partners-subtitle {
@@ -628,45 +628,43 @@ main,
 }
 
 .partner-grid {
-  margin-top: 1.5rem;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  margin-top: 1.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.2rem;
+  flex-wrap: nowrap;
 }
 
 .partner-item {
   position: relative;
-  border: 1px solid rgba(89, 146, 255, 0.32);
-  background: linear-gradient(180deg, rgba(11, 34, 88, 0.96), rgba(8, 25, 65, 0.98));
-  border-radius: 16px;
+  border: 0;
+  background: transparent;
+  border-radius: 999px;
   color: #f0f6ff;
-  padding: 1rem 0.95rem;
-  text-align: left;
+  padding: 0;
+  text-align: center;
   cursor: pointer;
-  min-height: 150px;
+  min-height: auto;
   display: grid;
-  gap: 0.72rem;
-  align-content: start;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  place-items: center;
+  gap: 0;
+  transition: transform 0.22s ease;
 }
 
 .partner-item:hover,
 .partner-item:focus-visible {
-  transform: translateY(-6px) scale(1.01);
-  border-color: rgba(42, 201, 255, 0.75);
-  box-shadow: 0 16px 36px rgba(5, 19, 55, 0.6), 0 0 28px rgba(42, 201, 255, 0.26);
+  transform: translateY(-6px) scale(1.02);
   outline: none;
 }
 
 .partner-icon {
-  width: 72px;
-  height: 72px;
+  width: 128px;
+  height: 128px;
 }
 
 .partner-name {
-  font-family: "Montserrat", sans-serif;
-  font-size: 1.03rem;
-  font-weight: 700;
+  display: none;
 }
 
 .partner-popup {
@@ -735,7 +733,8 @@ main,
   }
 
   .partner-grid {
-    grid-template-columns: 1fr;
+    flex-wrap: wrap;
+    gap: 1.2rem;
   }
 
   .partner-popup {
