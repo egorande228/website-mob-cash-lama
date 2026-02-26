@@ -1642,7 +1642,7 @@ main,
 .sub-cards {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 0.9rem;
+  gap: 1.3rem 1.1rem;
   padding: 0 0 2rem;
 }
 
@@ -1699,21 +1699,66 @@ main,
 }
 
 .sub-card {
-  border: 1px solid rgba(89, 146, 255, 0.32);
-  border-radius: 16px;
-  padding: 1.1rem;
-  background: linear-gradient(180deg, rgba(11, 34, 88, 0.96), rgba(8, 25, 65, 0.98));
+  display: grid;
+  gap: 0.8rem;
+  align-content: start;
 }
 
-.sub-card h3 {
+.sub-card-media {
+  height: 220px;
+  border: 1px solid rgba(78, 152, 255, 0.34);
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(7, 27, 74, 0.96), rgba(4, 17, 52, 0.98));
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.sub-card-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(66, 201, 255, 0.3), transparent 34%),
+    radial-gradient(circle at 78% 70%, rgba(25, 119, 255, 0.2), transparent 40%);
+}
+
+.sub-card-glyph {
+  position: relative;
+  z-index: 1;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: clamp(3.2rem, 8vw, 4.8rem);
+  line-height: 1;
+  color: #49dcff;
+  text-shadow: 0 0 18px rgba(73, 220, 255, 0.36);
+}
+
+.media-instant .sub-card-glyph {
+  color: #6be0ff;
+}
+
+.media-service .sub-card-glyph {
+  color: #42d2ff;
+}
+
+.media-reward .sub-card-glyph {
+  color: #7ad9ff;
+}
+
+.sub-card-copy h3 {
   margin: 0;
   font-family: "Montserrat", sans-serif;
-  font-size: 1.1rem;
+  font-size: clamp(1.12rem, 2vw, 1.42rem);
+  letter-spacing: 0.01em;
 }
 
-.sub-card p {
-  margin: 0.7rem 0 0;
+.sub-card-copy p {
+  margin: 0.55rem 0 0;
   color: #cbdbff;
+  font-size: clamp(1.04rem, 1.6vw, 1.14rem);
+  line-height: 1.45;
 }
 
 .sub-bottom {
@@ -1755,6 +1800,10 @@ main,
 
   .agent-support-card {
     padding: 1rem;
+  }
+
+  .sub-card-media {
+    height: 180px;
   }
 
   .sub-hero-agent .feature-band {
