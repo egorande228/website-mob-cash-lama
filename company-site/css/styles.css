@@ -896,6 +896,17 @@ main,
   animation: glow-breath 3.4s ease-in-out infinite;
 }
 
+.hero-brand .brand-char {
+  display: inline-block;
+  animation: brand-float 2.4s ease-in-out infinite;
+}
+
+.hero-brand .brand-char-1 { animation-delay: 0s; }
+.hero-brand .brand-char-2 { animation-delay: 0.12s; }
+.hero-brand .brand-char-3 { animation-delay: 0.24s; }
+.hero-brand .brand-char-4 { animation-delay: 0.36s; }
+.hero-brand .brand-char-5 { animation-delay: 0.48s; }
+
 .hero-subbrand {
   margin: 0.25rem 0 0;
   font-family: "Montserrat", sans-serif;
@@ -924,6 +935,20 @@ main,
   filter: drop-shadow(0 0 12px rgba(71, 223, 255, 0.65));
 }
 
+.mma-glove {
+  width: 44px;
+  height: 44px;
+  font-size: 1.45rem;
+  filter: drop-shadow(0 0 11px rgba(71, 223, 255, 0.56));
+}
+
+.football {
+  width: 46px;
+  height: 46px;
+  font-size: 1.52rem;
+  filter: drop-shadow(0 0 11px rgba(71, 223, 255, 0.56));
+}
+
 .coin {
   width: 30px;
   height: 30px;
@@ -934,9 +959,16 @@ main,
 
 .ball-1 { animation: drift-ball-1 8s ease-in-out infinite; }
 .ball-2 { animation: drift-ball-2 9.5s ease-in-out infinite; }
+.mma-glove-1 { animation: drift-mma-glove-1 9.1s ease-in-out infinite; }
+.football-1 { animation: drift-football-1 9.8s ease-in-out infinite; }
 .coin-1 { animation: drift-coin-1 7.2s ease-in-out infinite; }
 .coin-2 { animation: drift-coin-2 8.8s ease-in-out infinite; }
 .coin-3 { animation: drift-coin-3 10.4s ease-in-out infinite; }
+
+@keyframes brand-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
 
 @keyframes text-wave {
   0%, 100% { transform: translateY(0); }
@@ -960,6 +992,20 @@ main,
   25% { transform: translate(128px, 122px); }
   50% { transform: translate(94px, 62px); }
   75% { transform: translate(145px, 34px); }
+}
+
+@keyframes drift-mma-glove-1 {
+  0%, 100% { transform: translate(-188px, 116px); }
+  25% { transform: translate(-136px, 90px); }
+  50% { transform: translate(-96px, 126px); }
+  75% { transform: translate(-152px, 146px); }
+}
+
+@keyframes drift-football-1 {
+  0%, 100% { transform: translate(184px, -114px); }
+  25% { transform: translate(142px, -144px); }
+  50% { transform: translate(108px, -96px); }
+  75% { transform: translate(150px, -68px); }
 }
 
 @keyframes drift-coin-1 {
