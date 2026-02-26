@@ -1646,6 +1646,58 @@ main,
   padding: 0 0 2rem;
 }
 
+.agent-support {
+  padding: 0.2rem 0 1.5rem;
+}
+
+.agent-support-card {
+  border: 1px solid rgba(78, 154, 255, 0.38);
+  border-radius: 18px;
+  padding: 1.2rem 1.25rem;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(57, 203, 255, 0.18), transparent 40%),
+    linear-gradient(145deg, rgba(8, 30, 82, 0.95), rgba(6, 22, 61, 0.98));
+}
+
+.agent-support-kicker {
+  margin: 0;
+  color: #5bd9ff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  font-size: 0.8rem;
+}
+
+.agent-support-card h2 {
+  margin: 0.35rem 0 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.35rem, 2.8vw, 2rem);
+  line-height: 1.2;
+}
+
+.agent-support-card > p {
+  margin: 0.7rem 0 0;
+  color: #c9dcff;
+  max-width: 68ch;
+}
+
+.agent-support-points {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.agent-support-points span {
+  border: 1px solid rgba(89, 160, 255, 0.45);
+  background: rgba(8, 33, 82, 0.68);
+  color: #dff0ff;
+  border-radius: 999px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
 .sub-card {
   border: 1px solid rgba(89, 146, 255, 0.32);
   border-radius: 16px;
@@ -1699,6 +1751,10 @@ main,
     max-width: 520px;
     width: 100%;
     justify-self: center;
+  }
+
+  .agent-support-card {
+    padding: 1rem;
   }
 
   .sub-hero-agent .feature-band {
