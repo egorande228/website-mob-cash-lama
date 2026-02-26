@@ -80,29 +80,6 @@ if (submitButton) {
   });
 }
 
-const toast = document.getElementById('toast');
-const toastTitle = document.getElementById('toast-title');
-const toastMsg = document.getElementById('toast-msg');
-
-const fakeData = [
-  { name: 'Agent A.', region: 'Chile', action: 'completed onboarding' },
-  { name: 'Agent B.', region: 'Peru', action: 'received first payout' },
-  { name: 'Agent C.', region: 'Mexico', action: 'activated account' },
-  { name: 'Agent D.', region: 'Colombia', action: 'submitted verification' },
-];
-
-if (toast && toastTitle && toastMsg) {
-  const showToast = () => {
-    const data = fakeData[Math.floor(Math.random() * fakeData.length)];
-    toastTitle.textContent = 'Recent Activity';
-    toastMsg.textContent = `${data.name} (${data.region}) ${data.action}`;
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 4200);
-  };
-
-  setTimeout(showToast, 2000);
-  setInterval(showToast, 9000);
-}
 
 // Remove light checkerboard-like background from selected images.
 const keyImages = document.querySelectorAll('img.keyed-image');
