@@ -1769,6 +1769,34 @@ main,
   margin-top: 1rem;
 }
 
+.agent-final-cta {
+  border: 1px solid rgba(91, 163, 255, 0.45);
+  border-radius: 18px;
+  padding: 1.15rem 1.15rem 1.25rem;
+  background:
+    radial-gradient(circle at 16% 10%, rgba(72, 208, 255, 0.2), transparent 38%),
+    linear-gradient(145deg, rgba(16, 57, 136, 0.96), rgba(9, 33, 89, 0.98));
+}
+
+.agent-final-cta p {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.35rem, 3.2vw, 2.55rem);
+  font-weight: 800;
+  line-height: 1.17;
+  text-transform: uppercase;
+}
+
+.agent-final-cta .cta-attention {
+  margin-top: 0.9rem;
+  animation: cta-float 2.6s ease-in-out infinite;
+}
+
+@keyframes cta-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
 @media (max-width: 1020px) {
   .sports-story-grid,
   .sponsors-box,
@@ -1810,6 +1838,14 @@ main,
     min-width: 0;
     width: 100%;
     font-size: clamp(1.25rem, 5vw, 1.9rem);
+  }
+
+  .agent-final-cta {
+    padding: 1rem;
+  }
+
+  .agent-final-cta p {
+    font-size: clamp(1.1rem, 5vw, 1.6rem);
   }
 }
 
