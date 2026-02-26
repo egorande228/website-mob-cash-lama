@@ -1594,11 +1594,23 @@ main,
   animation: growth-line-draw 4.2s ease-out infinite;
 }
 
+.growth-line-glint {
+  fill: none;
+  stroke: rgba(215, 246, 255, 0.95);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 56 464;
+  stroke-dashoffset: 540;
+  filter: drop-shadow(0 0 8px rgba(206, 244, 255, 0.75));
+  animation: growth-line-glint 4.2s linear infinite;
+}
+
 .growth-dot {
   fill: #58e0ff;
   filter: drop-shadow(0 0 10px rgba(88, 224, 255, 0.85));
   opacity: 0;
-  animation: growth-dot-pop 4.2s ease-out infinite;
+  animation: growth-dot-pop 4.2s ease-out infinite, growth-dot-pulse 1.2s ease-in-out infinite;
 }
 
 .growth-label {
@@ -1616,11 +1628,13 @@ main,
   font-size: 1rem;
 }
 
-.growth-recurring {
+.growth-infinity {
   right: 22px;
-  top: 20px;
+  top: 10px;
   color: #5be0ff;
-  font-size: clamp(0.95rem, 2vw, 1.2rem);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 1;
+  text-shadow: 0 0 14px rgba(91, 224, 255, 0.6);
   opacity: 0;
   transform: translateY(6px);
   animation: growth-label-show 4.2s ease-out infinite;
@@ -1635,6 +1649,18 @@ main,
 @keyframes growth-dot-pop {
   0%, 60% { opacity: 0; transform: scale(0.6); }
   70%, 100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes growth-dot-pulse {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(88, 224, 255, 0.7)); }
+  50% { filter: drop-shadow(0 0 16px rgba(120, 235, 255, 0.95)); }
+}
+
+@keyframes growth-line-glint {
+  0% { stroke-dashoffset: 540; opacity: 0; }
+  10% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 0; }
 }
 
 @keyframes growth-label-show {
