@@ -78,6 +78,23 @@ if (calcVolume && calcDays && calcVolumeValue && calcDaysValue && calcResult) {
   updateCalculator();
 }
 
+const growthAmount = document.getElementById('growthAmount');
+if (growthAmount) {
+  const cycleMs = 4200;
+  const targetAmount = 2700;
+  const formatMoney = (value) => `$${Math.round(value).toLocaleString('en-US')}`;
+  const easeOutCubic = (t) => 1 - (1 - t) ** 3;
+
+  const animateGrowthAmount = (timestamp) => {
+    const progress = (timestamp % cycleMs) / cycleMs;
+    const amount = targetAmount * easeOutCubic(progress);
+    growthAmount.textContent = formatMoney(amount);
+    window.requestAnimationFrame(animateGrowthAmount);
+  };
+
+  window.requestAnimationFrame(animateGrowthAmount);
+}
+
 let selectedMethod = 'telegram';
 const methodButtons = document.querySelectorAll('.tc-method');
 const contactLabel = document.getElementById('contact-input-label');

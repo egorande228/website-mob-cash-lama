@@ -1640,6 +1640,17 @@ main,
   animation: growth-label-show 4.2s ease-out infinite;
 }
 
+.growth-amount {
+  right: 70px;
+  top: 30px;
+  color: #dff5ff;
+  font-size: clamp(0.95rem, 2.1vw, 1.35rem);
+  text-shadow: 0 0 12px rgba(84, 220, 255, 0.42);
+  opacity: 0;
+  transform: translateY(6px);
+  animation: growth-label-show 4.2s ease-out infinite;
+}
+
 @keyframes growth-line-draw {
   0% { stroke-dashoffset: 520; }
   55% { stroke-dashoffset: 0; }
