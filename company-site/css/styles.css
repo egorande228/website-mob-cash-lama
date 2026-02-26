@@ -928,6 +928,12 @@ main,
   pointer-events: none;
 }
 
+.float-inner {
+  display: inline-block;
+  will-change: transform;
+  transition: transform 150ms ease-out;
+}
+
 .ball {
   width: 56px;
   height: 56px;

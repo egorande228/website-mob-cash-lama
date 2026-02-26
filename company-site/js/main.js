@@ -21,6 +21,38 @@ const observer = new IntersectionObserver(
 
 reveals.forEach((item) => observer.observe(item));
 
+const heroMotion = document.querySelector('.hero-motion');
+const floatInnerItems = heroMotion ? heroMotion.querySelectorAll('.float-inner') : [];
+
+if (heroMotion && floatInnerItems.length && window.matchMedia('(pointer: fine)').matches) {
+  const maxOffset = 16;
+
+  const depthByType = (item) => {
+    if (item.closest('.coin')) return 0.45;
+    if (item.closest('.ball')) return 1;
+    if (item.closest('.mma-glove')) return 0.85;
+    if (item.closest('.football')) return 0.75;
+    return 0.7;
+  };
+
+  heroMotion.addEventListener('mousemove', (event) => {
+    const rect = heroMotion.getBoundingClientRect();
+    const nx = ((event.clientX - rect.left) / rect.width - 0.5) * 2;
+    const ny = ((event.clientY - rect.top) / rect.height - 0.5) * 2;
+
+    floatInnerItems.forEach((item) => {
+      const depth = depthByType(item);
+      item.style.transform = `translate(${(nx * maxOffset * depth).toFixed(2)}px, ${(ny * maxOffset * depth).toFixed(2)}px)`;
+    });
+  });
+
+  heroMotion.addEventListener('mouseleave', () => {
+    floatInnerItems.forEach((item) => {
+      item.style.transform = 'translate(0px, 0px)';
+    });
+  });
+}
+
 let selectedMethod = 'telegram';
 const methodButtons = document.querySelectorAll('.tc-method');
 const contactLabel = document.getElementById('contact-input-label');
