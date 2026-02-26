@@ -1295,68 +1295,83 @@ main,
   color: #c8d8ff;
 }
 
-.tc-form {
-  margin-top: 1.2rem;
+.tc-manager-grid {
+  margin-top: 1.3rem;
   display: grid;
-  gap: 0.62rem;
+  justify-content: center;
 }
 
-.tc-form label {
-  color: #e7f2ff;
+.tc-manager-card {
+  width: min(420px, 100%);
+  border: 1px solid rgba(82, 145, 255, 0.46);
+  border-radius: 22px;
+  padding: 1.35rem 1.25rem 1.25rem;
+  text-align: center;
+  background: linear-gradient(170deg, rgba(8, 27, 74, 0.96), rgba(4, 18, 52, 0.98));
+  box-shadow: 0 26px 58px rgba(2, 10, 32, 0.5);
+}
+
+.tc-manager-avatar-wrap {
+  width: 138px;
+  height: 138px;
+  margin: 0 auto 0.9rem;
+  border-radius: 999px;
+  padding: 5px;
+  border: 1px solid rgba(70, 214, 255, 0.76);
+  background: radial-gradient(circle at 30% 30%, rgba(34, 201, 255, 0.42), rgba(6, 21, 56, 0.95));
+}
+
+.tc-manager-avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 999px;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.tc-manager-card h3 {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.tc-manager-role {
+  margin: 0.32rem 0 1rem;
+  color: #31d7ff;
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: 1.07rem;
 }
 
-.tc-form input,
-.tc-form select {
-  border: 1px solid rgba(93, 138, 255, 0.4);
-  border-radius: 10px;
-  background: rgba(3, 16, 45, 0.9);
-  color: #fff;
-  font: inherit;
-  padding: 0.7rem 0.8rem;
-}
-
-.tc-methods {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.5rem;
-}
-
-.tc-method {
-  border: 1px solid rgba(102, 153, 255, 0.5);
-  border-radius: 10px;
-  background: rgba(3, 16, 45, 0.9);
-  color: #bcd2ff;
-  font-weight: 800;
-  text-transform: uppercase;
-  padding: 0.7rem;
-  cursor: pointer;
-}
-
-.tc-method.active {
-  background: linear-gradient(90deg, #12b5ef 0%, #1cd6ff 100%);
-  color: #00143f;
-  border-color: transparent;
-}
-
-.tc-submit {
-  margin-top: 0.6rem;
-  border: 1px solid #28cfff;
-  background: transparent;
-  color: #41d7ff;
-  border-radius: 10px;
+.tc-manager-btn {
+  display: block;
+  margin-top: 0.55rem;
+  border-radius: 12px;
   padding: 0.85rem 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
   font-family: "Montserrat", sans-serif;
   font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
 }
 
-.tc-submit:hover {
-  background: linear-gradient(90deg, #12b5ef 0%, #1cd6ff 100%);
-  color: #00143f;
+.tc-manager-btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.tc-manager-btn.is-telegram {
+  color: #ffffff;
+  border: 1px solid rgba(83, 142, 255, 0.72);
+  background: linear-gradient(145deg, rgba(45, 59, 102, 0.96), rgba(36, 47, 88, 0.98));
+}
+
+.tc-manager-btn.is-whatsapp {
+  color: #ffffff;
+  border: 1px solid rgba(44, 222, 152, 0.82);
+  background: linear-gradient(145deg, rgba(28, 212, 136, 0.95), rgba(31, 193, 124, 0.98));
+  box-shadow: inset 0 -8px 14px rgba(0, 0, 0, 0.14);
 }
 
 .chat-widget-btn {
@@ -1384,8 +1399,7 @@ main,
 
   .tc-grid-4,
   .tc-grid-3,
-  .tc-metrics,
-  .tc-methods {
+  .tc-metrics {
     grid-template-columns: 1fr;
   }
 
