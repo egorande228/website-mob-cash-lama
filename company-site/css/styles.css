@@ -1489,6 +1489,8 @@ main,
 }
 
 .hero-brand .brand-main {
+  display: inline-block;
+  margin-right: -0.08em;
   color: #ffffff;
 }
 
