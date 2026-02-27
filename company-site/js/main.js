@@ -168,7 +168,7 @@ const I18N = {
       hero_title_html: 'TOMA EL CONTROL<br />CONSTRUYE ESTABILIDAD<br /><span>RECIBE INGRESOS RECURRENTES</span>',
       hero_desc: 'Crea tu propio negocio como agente 1XBET con nuestra App MOBCASH, procesa operaciones escala tu base de clientes y recibe pagos semanales transparentes',
       hero_cta: 'Convertirme en Agente',
-      hero_help: 'Necesitas ayuda ahora?',
+      hero_help: '',
       hero_subbrand: 'Programa de Socios',
       metric_deposit: 'Comision por deposito',
       metric_withdrawal: 'Comision por retiro',
