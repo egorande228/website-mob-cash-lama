@@ -631,6 +631,7 @@ main,
   margin-top: 1.4rem;
   overflow: hidden;
   position: relative;
+  width: 100%;
   mask-image: linear-gradient(
     to right,
     transparent 0,
@@ -641,16 +642,22 @@ main,
 }
 
 .partner-track {
-  display: flex;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
   width: max-content;
-  animation: partner-scroll 28s linear infinite;
+  animation: partner-scroll 26s linear infinite;
 }
 
 .partner-lane {
-  display: flex;
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 2rem;
   padding-right: 2rem;
+  white-space: nowrap;
 }
 
 .partner-chip {
@@ -665,8 +672,8 @@ main,
 }
 
 @keyframes partner-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
 }
 
 @media (prefers-reduced-motion: reduce) {
