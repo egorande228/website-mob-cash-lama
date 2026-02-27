@@ -629,6 +629,7 @@ main,
 
 .partner-ticker {
   margin-top: 1.4rem;
+  display: flex;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -642,18 +643,19 @@ main,
 }
 
 .partner-track {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
   align-items: center;
   width: max-content;
+  will-change: transform;
   animation: partner-scroll 26s linear infinite;
 }
 
 .partner-lane {
-  display: inline-flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
   align-items: center;
   gap: 2rem;
   padding-right: 2rem;
@@ -661,7 +663,8 @@ main,
 }
 
 .partner-chip {
-  flex: 0 0 auto;
+  width: 128px;
+  height: 128px;
   display: grid;
   place-items: center;
 }
