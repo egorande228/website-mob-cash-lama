@@ -464,9 +464,6 @@ const applyTranslations = () => {
     setHTML('.tc-hero-copy h1', tr('index', 'hero_title_html'));
     setText('.tc-hero-copy > p', tr('index', 'hero_desc'));
     setText('.tc-hero-copy .cta', tr('index', 'hero_cta'));
-    setText('.hero-contact-label', tr('index', 'hero_help'));
-    setText('.hero-contact-btn.hero-contact-tg span:last-child', tr('common', 'telegram'));
-    setText('.hero-contact-btn.hero-contact-wa span:last-child', tr('common', 'whatsapp'));
     setText('.hero-subbrand', tr('index', 'hero_subbrand'));
 
     setText('.tc-metrics article:nth-child(1) span', tr('index', 'metric_deposit'));
