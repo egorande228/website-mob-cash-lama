@@ -78,6 +78,33 @@ main,
   gap: 1.8rem;
 }
 
+.lang-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid rgba(92, 148, 251, 0.42);
+  border-radius: 999px;
+  padding: 0.2rem;
+  background: rgba(8, 28, 78, 0.72);
+}
+
+.lang-btn {
+  border: 0;
+  background: transparent;
+  color: #cfe0ff;
+  font-weight: 800;
+  font-size: 0.75rem;
+  line-height: 1;
+  border-radius: 999px;
+  padding: 0.34rem 0.5rem;
+  cursor: pointer;
+}
+
+.lang-btn.is-active {
+  background: linear-gradient(90deg, #1296d7 0%, #1cc8ff 100%);
+  color: #f4feff;
+}
+
 .nav a {
   color: #d8e2ff;
   text-decoration: none;
@@ -380,6 +407,10 @@ main,
   .topbar-contact {
     margin-left: auto;
     gap: 0.4rem;
+  }
+
+  .lang-switch {
+    margin-left: auto;
   }
 
   .topbar-chat {
