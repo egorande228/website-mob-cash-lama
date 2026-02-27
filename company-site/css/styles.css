@@ -970,7 +970,7 @@ main,
   margin: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: clamp(3rem, 9vw, 6.6rem);
+  font-size: clamp(3.4rem, 10.4vw, 7.4rem);
   letter-spacing: 0.03em;
   color: #9ae9ff;
   text-shadow: 0 0 22px rgba(67, 215, 255, 0.62);
