@@ -166,7 +166,7 @@ const I18N = {
       description: 'Unete a la red de socios de 1XBET LATAM, lanza como agente y haz crecer comisiones recurrentes con soporte completo.',
       badge: 'Programa oficial LATAM de socios',
       hero_title_html: 'TOMA EL CONTROL<br />CONSTRUYE ESTABILIDAD<br /><span>RECIBE INGRESOS RECURRENTES</span>',
-      hero_desc: 'Crea tu propio flujo de agente con 1XBET LATAM: procesa operaciones, escala tu base de clientes y recibe pagos semanales transparentes.',
+      hero_desc: 'Crea tu propio negocio como agente 1XBET con nuestra App MOBCASH, procesa operaciones escala tu base de clientes y recibe pagos semanales transparentes',
       hero_cta: 'Convertirme en Agente',
       hero_help: 'Necesitas ayuda ahora?',
       hero_subbrand: 'Programa de Socios',
