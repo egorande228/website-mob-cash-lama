@@ -61,7 +61,7 @@ const calcResult = document.getElementById('calc-result');
 
 if (calcVolume && calcDays && calcVolumeValue && calcDaysValue && calcResult) {
   const formatMoney = (value) => `$${Math.round(value).toLocaleString('en-US')}`;
-  const commissionRate = 0.05;
+  const commissionRate = 0.08;
 
   const updateCalculator = () => {
     const volume = Number(calcVolume.value) || 0;
