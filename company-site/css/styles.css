@@ -643,26 +643,29 @@ main,
 }
 
 .partner-track {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: max-content;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
   align-items: center;
   width: max-content;
+  min-width: max-content;
   will-change: transform;
   animation: partner-scroll 26s linear infinite;
 }
 
 .partner-lane {
-  display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: max-content;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
   align-items: center;
   gap: 2rem;
   padding-right: 2rem;
+  min-width: max-content;
   white-space: nowrap;
 }
 
 .partner-chip {
+  flex: 0 0 128px;
   width: 128px;
   height: 128px;
   display: grid;
