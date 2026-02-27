@@ -413,7 +413,7 @@ const tr = (scope, key) => {
 
 const setText = (selector, value) => {
   const el = document.querySelector(selector);
-  if (el && value) el.textContent = value;
+  if (el && value !== undefined && value !== null) el.textContent = value;
 };
 
 const setHTML = (selector, value) => {
