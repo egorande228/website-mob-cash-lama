@@ -856,19 +856,6 @@ main,
   align-items: center;
 }
 
-.tc-badge {
-  display: inline-block;
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.82rem;
-  font-weight: 800;
-  letter-spacing: 0.03em;
-  color: #7de4ff;
-  border: 1px solid rgba(67, 188, 255, 0.5);
-  background: rgba(10, 40, 97, 0.5);
-  border-radius: 999px;
-  padding: 0.4rem 0.8rem;
-}
-
 .tc-hero-copy h1 {
   margin: 0.9rem 0 0;
   font-family: "Montserrat", sans-serif;

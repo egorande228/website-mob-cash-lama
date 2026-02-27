@@ -460,7 +460,6 @@ const applyTranslations = () => {
   setText('.footer', tr('common', 'footer'));
 
   if (pageType === 'index') {
-    setText('.tc-badge', tr('index', 'badge'));
     setHTML('.tc-hero-copy h1', tr('index', 'hero_title_html'));
     setText('.tc-hero-copy > p', tr('index', 'hero_desc'));
     setText('.tc-hero-copy .cta', tr('index', 'hero_cta'));
