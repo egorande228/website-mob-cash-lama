@@ -60,17 +60,27 @@ main,
 }
 
 .logo {
+  display: inline-flex;
+  align-items: flex-end;
   text-decoration: none;
   font-family: "Montserrat", sans-serif;
   font-size: 2.4rem;
   line-height: 1;
-  color: #ffffff;
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  color: #f4f8ff;
+  font-weight: 900;
+  font-style: italic;
+  letter-spacing: -0.055em;
+  transform: skewX(-8deg);
+  text-shadow: 0 6px 14px rgba(0, 10, 35, 0.35);
 }
 
 .logo span {
-  color: #00b8ff;
+  margin-left: 0.04em;
+  color: #2dd7ff;
+  background: linear-gradient(180deg, #2fe0ff 0%, #17bfff 52%, #0aa4ef 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .nav {
@@ -1033,9 +1043,11 @@ main,
   margin: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
+  font-style: italic;
   font-size: clamp(3rem, 9vw, 6.6rem);
-  letter-spacing: 0.03em;
-  color: #9ae9ff;
+  letter-spacing: -0.045em;
+  color: #f4f8ff;
+  transform: skewX(-7deg);
   text-shadow: 0 0 22px rgba(67, 215, 255, 0.62);
   animation: glow-breath 3.4s ease-in-out infinite;
 }
@@ -2341,10 +2353,17 @@ main,
 
 .hero-brand .brand-main {
   display: inline-block;
-  margin-right: -0.08em;
-  color: #ffffff;
+  margin-right: -0.06em;
+  color: #f6fbff;
 }
 
 .hero-brand .brand-accent {
-  color: #35d8ff;
+  color: #20ccff;
+}
+
+.hero-brand .brand-accent .brand-char {
+  background: linear-gradient(180deg, #35e1ff 0%, #1bc8ff 56%, #0da5ef 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
