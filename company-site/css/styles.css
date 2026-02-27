@@ -930,17 +930,10 @@ main,
 
 .hero-contact {
   margin-top: 0.8rem;
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-  flex-wrap: wrap;
-}
-
-.hero-contact-label {
-  color: #bcd3ff;
-  font-size: 0.9rem;
-  font-weight: 700;
-  margin-right: 0.2rem;
+  width: min(100%, 360px);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
 }
 
 .hero-contact-btn {
@@ -948,38 +941,56 @@ main,
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  color: #e9f3ff;
-  border-radius: 20px;
+  border-radius: 22px;
   border: 1px solid rgba(96, 156, 255, 0.45);
-  background: linear-gradient(180deg, rgba(12, 42, 108, 0.95), rgba(8, 29, 86, 0.98));
-  width: 86px;
-  height: 62px;
-  box-shadow: 0 14px 28px rgba(4, 15, 46, 0.42);
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  background: linear-gradient(165deg, rgba(19, 61, 150, 0.95), rgba(9, 31, 96, 0.98));
+  width: 100%;
+  height: 84px;
+  box-shadow:
+    0 14px 28px rgba(4, 15, 46, 0.42),
+    inset 0 1px 0 rgba(186, 226, 255, 0.3);
+  transform: rotate(-3deg);
+  transition: border-color 0.2s ease, transform 0.2s ease, filter 0.2s ease;
 }
 
 .hero-contact-btn:hover {
   border-color: rgba(69, 194, 255, 0.72);
-  transform: translateY(-1px);
+  transform: rotate(-1.5deg) translateY(-2px);
+  filter: saturate(1.1);
 }
 
 .hero-contact-icon {
-  width: 34px;
-  height: 34px;
-  border-radius: 999px;
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
   display: grid;
   place-items: center;
   color: #fff;
-  font-size: 0.84rem;
-  font-weight: 900;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.45),
+    0 6px 14px rgba(0, 10, 30, 0.4);
+}
+
+.hero-contact-icon svg {
+  width: 30px;
+  height: 30px;
+  fill: #fff;
 }
 
 .hero-contact-tg .hero-contact-icon {
-  background: linear-gradient(135deg, #2aa7ea, #1f83e2);
+  background: linear-gradient(145deg, #49c5ff, #1e87e6);
 }
 
 .hero-contact-wa .hero-contact-icon {
-  background: linear-gradient(135deg, #2fd36f, #19b85b);
+  background: linear-gradient(145deg, #57e25f, #1fbb4f);
+}
+
+.hero-contact-wa {
+  transform: rotate(3deg);
+}
+
+.hero-contact-wa:hover {
+  transform: rotate(1.5deg) translateY(-2px);
 }
 
 .tc-hero-art {
@@ -1538,8 +1549,7 @@ main,
   }
 
   .hero-contact-btn {
-    width: 78px;
-    height: 58px;
+    height: 76px;
   }
 }
 
