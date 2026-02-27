@@ -1897,38 +1897,66 @@ main,
   position: absolute;
   font-family: "Montserrat", sans-serif;
   font-weight: 900;
-  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  font-size: clamp(1.15rem, 2vw, 1.7rem);
   color: #4ad9ff;
-  text-shadow: 0 0 14px rgba(52, 214, 255, 0.75);
+  text-shadow: 0 0 11px rgba(52, 214, 255, 0.62);
   opacity: 0;
   pointer-events: none;
 }
 
 .ap-1 {
-  right: 50%;
-  bottom: 56%;
-  animation: agent-percent-fly 5.2s ease-out infinite;
+  right: 58%;
+  bottom: 64%;
+  animation: agent-percent-fly-1 8.2s ease-out infinite;
 }
 
 .ap-2 {
-  right: 50%;
-  bottom: 56%;
-  animation: agent-percent-fly 5.8s ease-out infinite 1.1s;
+  right: 38%;
+  bottom: 47%;
+  animation: agent-percent-fly-2 9.4s ease-out infinite 1.5s;
 }
 
 .ap-3 {
   right: 50%;
-  bottom: 56%;
-  animation: agent-percent-fly 6.2s ease-out infinite 2s;
+  bottom: 39%;
+  animation: agent-percent-fly-3 10.4s ease-out infinite 3.1s;
 }
 
-.ap-4 {
-  right: 50%;
-  bottom: 56%;
-  animation: agent-percent-fly 6.8s ease-out infinite 3.2s;
+@keyframes agent-percent-fly-1 {
+  0% {
+    transform: translate(0, 0) scale(0.92);
+    opacity: 0;
+  }
+  18% {
+    opacity: 1;
+  }
+  72% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-36px, -44px) scale(1.03);
+    opacity: 0;
+  }
 }
 
-@keyframes agent-percent-fly {
+@keyframes agent-percent-fly-2 {
+  0% {
+    transform: translate(0, 0) scale(0.92);
+    opacity: 0;
+  }
+  18% {
+    opacity: 1;
+  }
+  74% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(24px, -56px) scale(1.02);
+    opacity: 0;
+  }
+}
+
+@keyframes agent-percent-fly-3 {
   0% {
     transform: translate(0, 0) scale(0.92);
     opacity: 0;
@@ -1936,11 +1964,11 @@ main,
   20% {
     opacity: 1;
   }
-  70% {
+  76% {
     opacity: 1;
   }
   100% {
-    transform: translate(-102px, -68px) scale(1.08);
+    transform: translate(-46px, -24px) scale(1.01);
     opacity: 0;
   }
 }
