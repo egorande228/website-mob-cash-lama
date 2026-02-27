@@ -33,27 +33,3 @@ Working root:
 
 ## Cross-chat continuity
 If another chat/session opens this same repo path and branch, work can continue normally with full continuity after `git status` check.
-
-## Current project snapshot (updated)
-- Branch: `main`
-- Sync target: `origin/main`
-- Pages:
-  - `index.html` (main landing)
-  - `agent.html` (Be our Agent)
-  - `partner.html` (Be our Partner)
-- Language system:
-  - ES / PT / EN switcher in topbar
-  - Translations handled in `js/main.js`
-  - Language choice stored in `localStorage` (`site_lang`)
-- Recent UX/content updates:
-  - Deposit commission updated to `8%`
-  - Calculator formula updated to `8%`
-  - Header contact pills (`Telegram` / `WhatsApp`)
-  - Hero quick-contact mini-block under CTA
-  - `Agent Academy` section removed from main page
-  - Partner growth chart enhanced with explanatory labels/axis/value points
-  - Agent `%` animation softened and reduced in intensity
-
-## Hosting note
-- Vercel was used only for temporary preview.
-- Preferred long-term path discussed: domain + GitHub Pages.
