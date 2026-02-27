@@ -50,7 +50,7 @@ const I18N = {
       metric_support: 'Manager Support',
       metric_window: 'Fast Launch Window',
       calc_title_html: 'Estimate Your <span>Income</span>',
-      calc_desc: 'Based on the daily transaction volume (8% commission).',
+      calc_desc: 'Based on the daily transaction volume (8% + 2% commission).',
       calc_volume_label: 'Daily Volume ($)',
       calc_days_label: 'Operational Days',
       calc_title: 'Your Estimated Commission',
@@ -175,7 +175,7 @@ const I18N = {
       metric_support: 'Soporte de manager',
       metric_window: 'Ventana de lanzamiento',
       calc_title_html: 'Estima Tus <span>Ingresos</span>',
-      calc_desc: 'Basado en el volumen diario de transacciones (comision del 8%).',
+      calc_desc: 'Basado en el volumen diario de transacciones (comision del 8% + 2%).',
       calc_volume_label: 'Volumen diario ($)',
       calc_days_label: 'Dias operativos',
       calc_title: 'Tu comision estimada',
@@ -300,7 +300,7 @@ const I18N = {
       metric_support: 'Suporte do manager',
       metric_window: 'Janela de lancamento',
       calc_title_html: 'Estime Sua <span>Renda</span>',
-      calc_desc: 'Com base no volume diario de transacoes (comissao de 8%).',
+      calc_desc: 'Com base no volume diario de transacoes (comissao de 8% + 2%).',
       calc_volume_label: 'Volume diario ($)',
       calc_days_label: 'Dias operacionais',
       calc_title: 'Sua comissao estimada',
@@ -655,7 +655,7 @@ const calcResult = document.getElementById('calc-result');
 
 if (calcVolume && calcDays && calcVolumeValue && calcDaysValue && calcResult) {
   const formatMoney = (value) => `$${Math.round(value).toLocaleString('en-US')}`;
-  const commissionRate = 0.08;
+  const commissionRate = 0.1;
 
   updateCalculator = () => {
     const volume = Number(calcVolume.value) || 0;
