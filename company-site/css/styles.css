@@ -627,35 +627,36 @@ main,
   font-size: 1.1rem;
 }
 
-.partner-grid {
+.partner-ticker {
   margin-top: 1.4rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2.2rem;
-  flex-wrap: nowrap;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 8%,
+    #000 92%,
+    transparent 100%
+  );
 }
 
-.partner-item {
-  position: relative;
-  border: 0;
-  background: transparent;
-  border-radius: 999px;
-  color: #f0f6ff;
-  padding: 0;
-  text-align: center;
-  cursor: pointer;
-  min-height: auto;
+.partner-track {
+  display: flex;
+  width: max-content;
+  animation: partner-scroll 28s linear infinite;
+}
+
+.partner-lane {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding-right: 2rem;
+}
+
+.partner-chip {
+  flex: 0 0 auto;
   display: grid;
   place-items: center;
-  gap: 0;
-  transition: transform 0.22s ease;
-}
-
-.partner-item:hover,
-.partner-item:focus-visible {
-  transform: translateY(-6px) scale(1.02);
-  outline: none;
 }
 
 .partner-icon {
@@ -663,44 +664,15 @@ main,
   height: 128px;
 }
 
-.partner-name {
-  display: none;
+@keyframes partner-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-.partner-popup {
-  position: absolute;
-  left: 50%;
-  bottom: calc(100% + 12px);
-  transform: translate(-50%, 12px);
-  width: min(280px, 85vw);
-  background: linear-gradient(180deg, rgba(14, 48, 118, 0.98), rgba(7, 27, 75, 0.99));
-  border: 1px solid rgba(70, 150, 255, 0.56);
-  border-radius: 14px;
-  padding: 0.8rem 0.9rem;
-  display: grid;
-  gap: 0.35rem;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.18s ease, transform 0.18s ease;
-  box-shadow: 0 14px 34px rgba(2, 8, 25, 0.65);
-  z-index: 4;
-}
-
-.partner-popup strong {
-  font-family: "Montserrat", sans-serif;
-  font-size: 0.95rem;
-}
-
-.partner-popup span {
-  color: #d9e8ff;
-  font-size: 0.9rem;
-  line-height: 1.35;
-}
-
-.partner-item:hover .partner-popup,
-.partner-item:focus-visible .partner-popup {
-  opacity: 1;
-  transform: translate(-50%, 0);
+@media (prefers-reduced-motion: reduce) {
+  .partner-track {
+    animation: none;
+  }
 }
 
 @keyframes grid-drift {
@@ -732,17 +704,9 @@ main,
     min-height: 230px;
   }
 
-  .partner-grid {
-    flex-wrap: wrap;
+  .partner-lane {
     gap: 1.2rem;
-  }
-
-  .partner-popup {
-    position: static;
-    transform: none;
-    opacity: 1;
-    pointer-events: auto;
-    width: 100%;
+    padding-right: 1.2rem;
   }
 }
 
@@ -2038,6 +2002,13 @@ main,
   object-position: center;
   padding: 18px;
   background: radial-gradient(circle at 50% 50%, rgba(14, 39, 95, 0.75), rgba(6, 20, 52, 0.95));
+}
+
+.partner-icon-logo {
+  object-fit: contain;
+  object-position: center;
+  padding: 14px;
+  background: radial-gradient(circle at 50% 50%, rgba(14, 39, 95, 0.72), rgba(6, 20, 52, 0.95));
 }
 
 .hero-brand .brand-main {
