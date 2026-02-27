@@ -83,8 +83,8 @@ const I18N = {
       register_title: 'Join The Growing Network',
       register_desc: 'Contact your dedicated Sales Manager and start your launch with direct onboarding support.',
       manager_title: 'Sales Manager',
-      register_open_telegram: 'Open Telegram (coming soon)',
-      register_open_whatsapp: 'Open WhatsApp (coming soon)',
+      register_open_telegram: 'Open Telegram',
+      register_open_whatsapp: 'Open WhatsApp',
       chat_register_aria: 'Open registration',
     },
     agent: {
@@ -208,8 +208,8 @@ const I18N = {
       register_title: 'Unete a la red en crecimiento',
       register_desc: 'Contacta a tu Sales Manager dedicado y comienza tu lanzamiento con soporte directo.',
       manager_title: 'Gerente de Ventas',
-      register_open_telegram: 'Abrir Telegram (proximamente)',
-      register_open_whatsapp: 'Abrir WhatsApp (proximamente)',
+      register_open_telegram: 'Abrir Telegram',
+      register_open_whatsapp: 'Abrir WhatsApp',
       chat_register_aria: 'Abrir registro',
     },
     agent: {
@@ -333,8 +333,8 @@ const I18N = {
       register_title: 'Junte-se a rede em crescimento',
       register_desc: 'Fale com seu Sales Manager dedicado e inicie seu lancamento com suporte direto.',
       manager_title: 'Gerente de Vendas',
-      register_open_telegram: 'Abrir Telegram (em breve)',
-      register_open_whatsapp: 'Abrir WhatsApp (em breve)',
+      register_open_telegram: 'Abrir Telegram',
+      register_open_whatsapp: 'Abrir WhatsApp',
       chat_register_aria: 'Abrir registro',
     },
     agent: {
