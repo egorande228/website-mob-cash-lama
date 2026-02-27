@@ -52,14 +52,17 @@ main,
 
 .topbar {
   height: 84px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "logo nav lang";
   align-items: center;
-  justify-content: space-between;
   gap: 1rem;
   border-bottom: 1px solid rgba(32, 73, 162, 0.65);
+  position: relative;
 }
 
 .logo {
+  grid-area: logo;
   display: inline-flex;
   align-items: flex-end;
   text-decoration: none;
@@ -84,11 +87,15 @@ main,
 }
 
 .nav {
+  grid-area: nav;
   display: flex;
+  justify-content: center;
   gap: 1.8rem;
 }
 
 .lang-switch {
+  grid-area: lang;
+  justify-self: end;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -124,52 +131,6 @@ main,
 .nav a:hover,
 .nav a.active {
   color: #1cc8ff;
-}
-
-.topbar-contact {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.55rem;
-}
-
-.topbar-chat {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  text-decoration: none;
-  color: #eaf3ff;
-  font-weight: 800;
-  font-size: 0.88rem;
-  border-radius: 999px;
-  border: 1px solid rgba(104, 160, 255, 0.45);
-  background: rgba(8, 28, 78, 0.85);
-  padding: 0.45rem 0.82rem;
-  transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
-}
-
-.topbar-chat:hover {
-  transform: translateY(-1px);
-  border-color: rgba(77, 196, 255, 0.72);
-  box-shadow: 0 8px 22px rgba(6, 21, 58, 0.45);
-}
-
-.topbar-chat-icon {
-  width: 20px;
-  height: 20px;
-  border-radius: 999px;
-  display: grid;
-  place-items: center;
-  font-size: 0.72rem;
-  font-weight: 900;
-  color: #fff;
-}
-
-.topbar-chat-tg .topbar-chat-icon {
-  background: linear-gradient(135deg, #2aa7ea, #1f83e2);
-}
-
-.topbar-chat-wa .topbar-chat-icon {
-  background: linear-gradient(135deg, #2fd36f, #19b85b);
 }
 
 .menu-btn {
@@ -373,6 +334,11 @@ main,
 }
 
 @media (max-width: 960px) {
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+  }
+
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
@@ -414,24 +380,8 @@ main,
     display: flex;
   }
 
-  .topbar-contact {
-    margin-left: auto;
-    gap: 0.4rem;
-  }
-
   .lang-switch {
     margin-left: auto;
-  }
-
-  .topbar-chat {
-    padding: 0.35rem;
-    width: 34px;
-    height: 34px;
-    justify-content: center;
-  }
-
-  .topbar-chat-text {
-    display: none;
   }
 
   .feature-band {
