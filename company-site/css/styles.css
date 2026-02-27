@@ -69,21 +69,37 @@ main,
   font-family: "Montserrat", sans-serif;
   font-size: 2.4rem;
   line-height: 1;
-  color: #f4f8ff;
-  font-weight: 900;
+  color: #ffffff;
+  font-weight: 800;
   font-style: italic;
-  letter-spacing: -0.055em;
-  transform: skewX(-8deg);
-  text-shadow: 0 6px 14px rgba(0, 10, 35, 0.35);
+  letter-spacing: -0.02em;
+  transform: skewX(-4deg);
 }
 
-.logo span {
-  margin-left: 0.04em;
-  color: #2dd7ff;
-  background: linear-gradient(180deg, #2fe0ff 0%, #17bfff 52%, #0aa4ef 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.logo-main {
+  display: inline-block;
+  color: #ffffff;
+}
+
+.logo-x {
+  position: relative;
+  display: inline-block;
+}
+
+.logo-x::after {
+  content: "";
+  position: absolute;
+  left: 48%;
+  top: -6%;
+  width: 0.16em;
+  height: 114%;
+  background: #082b73;
+  transform: rotate(29deg) skewX(-14deg);
+}
+
+.logo-accent {
+  margin-left: 0.02em;
+  color: #00b8ff;
 }
 
 .nav {
@@ -982,15 +998,16 @@ main,
   font-weight: 900;
   font-style: italic;
   font-size: clamp(3rem, 9vw, 6.6rem);
-  letter-spacing: -0.045em;
-  color: #f4f8ff;
-  transform: skewX(-7deg);
+  letter-spacing: 0.02em;
+  color: #9ae9ff;
+  transform: skewX(-4deg);
   text-shadow: 0 0 22px rgba(67, 215, 255, 0.62);
   animation: glow-breath 3.4s ease-in-out infinite;
 }
 
 .hero-brand .brand-char {
   display: inline-block;
+  position: relative;
   animation: brand-float 2.4s ease-in-out infinite;
 }
 
@@ -2290,17 +2307,21 @@ main,
 
 .hero-brand .brand-main {
   display: inline-block;
-  margin-right: -0.06em;
-  color: #f6fbff;
+  margin-right: -0.08em;
+  color: #ffffff;
 }
 
 .hero-brand .brand-accent {
-  color: #20ccff;
+  color: #35d8ff;
 }
 
-.hero-brand .brand-accent .brand-char {
-  background: linear-gradient(180deg, #35e1ff 0%, #1bc8ff 56%, #0da5ef 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.hero-brand .brand-char-2::after {
+  content: "";
+  position: absolute;
+  left: 48%;
+  top: -8%;
+  width: 0.14em;
+  height: 118%;
+  background: #0a2d73;
+  transform: rotate(30deg) skewX(-14deg);
 }
