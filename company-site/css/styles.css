@@ -897,6 +897,58 @@ main,
   font-size: 1.08rem;
 }
 
+.hero-contact {
+  margin-top: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-contact-label {
+  color: #bcd3ff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-right: 0.2rem;
+}
+
+.hero-contact-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.36rem;
+  text-decoration: none;
+  color: #e9f3ff;
+  font-weight: 800;
+  font-size: 0.84rem;
+  border-radius: 999px;
+  border: 1px solid rgba(96, 156, 255, 0.45);
+  background: rgba(8, 28, 78, 0.82);
+  padding: 0.32rem 0.64rem;
+}
+
+.hero-contact-btn:hover {
+  border-color: rgba(69, 194, 255, 0.72);
+}
+
+.hero-contact-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 0.58rem;
+  font-weight: 900;
+}
+
+.hero-contact-tg .hero-contact-icon {
+  background: linear-gradient(135deg, #2aa7ea, #1f83e2);
+}
+
+.hero-contact-wa .hero-contact-icon {
+  background: linear-gradient(135deg, #2fd36f, #19b85b);
+}
+
 .tc-hero-art {
   border: none;
   border-radius: 0;
@@ -1450,6 +1502,11 @@ main,
 
   .hero-subbrand {
     font-size: clamp(0.85rem, 4.2vw, 1.1rem);
+  }
+
+  .hero-contact-label {
+    width: 100%;
+    margin-right: 0;
   }
 }
 
