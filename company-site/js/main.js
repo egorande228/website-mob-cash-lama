@@ -116,6 +116,15 @@ const I18N = {
       hero_title: 'Build long-term income by also being an affiliate.',
       hero_intro: 'Transfer operations give immediate earnings, while affiliate growth helps you build a business that scales on its own.',
       question_band: 'How? Share your referral link or code.',
+      growth_title: 'Your Affiliate Growth Potential',
+      growth_subtitle: 'Example path from week one to steady monthly income.',
+      growth_m1: 'Month 1',
+      growth_m2: 'Month 2',
+      growth_m3: 'Month 3',
+      growth_m6: 'Month 6+',
+      growth_p1: '+ Lifetime commissions',
+      growth_p2: '+ Weekly payouts',
+      growth_p3: '+ Transfer + affiliate effect',
       c1_title: 'Lifetime Client Base',
       c1_desc: 'Every player who registers through you becomes your long-term client.',
       c2_title: 'Lifetime Commissions',
@@ -232,6 +241,15 @@ const I18N = {
       hero_title: 'Construye ingresos a largo plazo siendo tambien afiliado.',
       hero_intro: 'Las transferencias te dan ganancias inmediatas, mientras el canal de afiliados te ayuda a construir un negocio que escala solo.',
       question_band: 'Como? Comparte tu link o codigo de referido.',
+      growth_title: 'Tu potencial de crecimiento afiliado',
+      growth_subtitle: 'Ruta de ejemplo desde la primera semana hasta ingresos mensuales estables.',
+      growth_m1: 'Mes 1',
+      growth_m2: 'Mes 2',
+      growth_m3: 'Mes 3',
+      growth_m6: 'Mes 6+',
+      growth_p1: '+ Comisiones de por vida',
+      growth_p2: '+ Pagos semanales',
+      growth_p3: '+ Efecto transferencias + afiliado',
       c1_title: 'Base de clientes de por vida',
       c1_desc: 'Cada jugador que se registra contigo se convierte en tu cliente de largo plazo.',
       c2_title: 'Comisiones de por vida',
@@ -348,6 +366,15 @@ const I18N = {
       hero_title: 'Construa renda de longo prazo sendo tambem afiliado.',
       hero_intro: 'As transferencias geram ganho imediato, enquanto o canal de afiliado ajuda voce a construir um negocio que escala sozinho.',
       question_band: 'Como? Compartilhe seu link ou codigo de indicacao.',
+      growth_title: 'Seu potencial de crescimento afiliado',
+      growth_subtitle: 'Caminho de exemplo da primeira semana ate renda mensal estavel.',
+      growth_m1: 'Mes 1',
+      growth_m2: 'Mes 2',
+      growth_m3: 'Mes 3',
+      growth_m6: 'Mes 6+',
+      growth_p1: '+ Comissoes vitalicias',
+      growth_p2: '+ Pagamentos semanais',
+      growth_p3: '+ Efeito transferencias + afiliado',
       c1_title: 'Base de clientes vitalicia',
       c1_desc: 'Cada jogador que se registra com voce se torna seu cliente de longo prazo.',
       c2_title: 'Comissoes vitalicias',
@@ -529,6 +556,15 @@ const applyTranslations = () => {
     setText('.sub-hero-partner .sub-intro', tr('partner', 'hero_intro'));
     setText('.sub-hero-partner .cta', tr('common', 'start_now'));
     setText('.sub-question .feature-band', tr('partner', 'question_band'));
+    setText('.growth-title', tr('partner', 'growth_title'));
+    setText('.growth-subtitle', tr('partner', 'growth_subtitle'));
+    setText('.growth-axis-x span:nth-child(1)', tr('partner', 'growth_m1'));
+    setText('.growth-axis-x span:nth-child(2)', tr('partner', 'growth_m2'));
+    setText('.growth-axis-x span:nth-child(3)', tr('partner', 'growth_m3'));
+    setText('.growth-axis-x span:nth-child(4)', tr('partner', 'growth_m6'));
+    setText('.growth-points span:nth-child(1)', tr('partner', 'growth_p1'));
+    setText('.growth-points span:nth-child(2)', tr('partner', 'growth_p2'));
+    setText('.growth-points span:nth-child(3)', tr('partner', 'growth_p3'));
 
     setText('.sub-cards .sub-card:nth-child(1) h3', tr('partner', 'c1_title'));
     setText('.sub-cards .sub-card:nth-child(1) p', tr('partner', 'c1_desc'));

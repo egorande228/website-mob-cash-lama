@@ -1692,6 +1692,28 @@ main,
   box-shadow: 0 20px 44px rgba(3, 12, 35, 0.55);
 }
 
+.growth-head {
+  position: absolute;
+  left: 20px;
+  top: 14px;
+  z-index: 2;
+}
+
+.growth-title {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #dff1ff;
+  letter-spacing: 0.01em;
+}
+
+.growth-subtitle {
+  margin: 0.2rem 0 0;
+  color: #b8d3ff;
+  font-size: 0.73rem;
+}
+
 .growth-chart {
   position: absolute;
   inset: 0;
@@ -1746,6 +1768,34 @@ main,
   text-transform: uppercase;
 }
 
+.growth-axis-x {
+  position: absolute;
+  left: 32px;
+  right: 32px;
+  bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  color: #9fbee9;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  z-index: 2;
+}
+
+.growth-axis-y {
+  position: absolute;
+  left: 12px;
+  top: 52px;
+  bottom: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: #8fb0df;
+  font-size: 0.64rem;
+  font-weight: 700;
+  z-index: 2;
+}
+
 .growth-start {
   left: 18px;
   bottom: 16px;
@@ -1774,6 +1824,26 @@ main,
   opacity: 0;
   transform: translateY(6px);
   animation: growth-label-show 4.2s ease-out infinite;
+}
+
+.growth-points {
+  position: absolute;
+  right: 14px;
+  bottom: 34px;
+  display: grid;
+  gap: 0.22rem;
+  z-index: 2;
+}
+
+.growth-points span {
+  font-size: 0.67rem;
+  font-weight: 700;
+  color: #d6eeff;
+  background: rgba(10, 38, 94, 0.62);
+  border: 1px solid rgba(88, 164, 255, 0.34);
+  border-radius: 999px;
+  padding: 0.18rem 0.46rem;
+  white-space: nowrap;
 }
 
 @keyframes growth-line-draw {
@@ -2131,6 +2201,37 @@ main,
     max-width: 560px;
     width: 100%;
     justify-self: center;
+  }
+
+  .growth-title {
+    font-size: 0.8rem;
+  }
+
+  .growth-subtitle {
+    font-size: 0.66rem;
+    max-width: 34ch;
+  }
+
+  .growth-axis-y {
+    display: none;
+  }
+
+  .growth-axis-x {
+    left: 20px;
+    right: 20px;
+    bottom: 8px;
+    font-size: 0.6rem;
+  }
+
+  .growth-points {
+    right: 10px;
+    bottom: 28px;
+    gap: 0.16rem;
+  }
+
+  .growth-points span {
+    font-size: 0.6rem;
+    padding: 0.14rem 0.35rem;
   }
 
   .agent-final-cta {
