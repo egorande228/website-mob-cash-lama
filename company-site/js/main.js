@@ -5,6 +5,12 @@ if (menuBtn && siteNav) {
   menuBtn.addEventListener('click', () => {
     siteNav.classList.toggle('open');
   });
+
+  siteNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      siteNav.classList.remove('open');
+    });
+  });
 }
 
 const I18N_STORAGE_KEY = 'site_lang';
