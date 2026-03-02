@@ -728,6 +728,18 @@ if (methodButtons.length && contactLabel && contactInput) {
 }
 
 const submitButton = document.getElementById('submitApplication');
+const sendPropellerLead = () => {
+  const params = new URLSearchParams(window.location.search);
+  const visitorId = params.get('visitor_id') || params.get('click_id') || params.get('clickid');
+  if (!visitorId) return;
+
+  const postbackUrl = `https://ad.propellerads.com/conversion.php?aid=3892604&pid=&tid=152749&visitor_id=${encodeURIComponent(visitorId)}&payout=1`;
+
+  // Fire-and-forget request to register a lead in Propeller.
+  const pixel = new Image();
+  pixel.src = postbackUrl;
+};
+
 if (submitButton) {
   submitButton.addEventListener('click', () => {
     const name = document.getElementById('input-name');
@@ -756,6 +768,7 @@ if (submitButton) {
       });
     }
 
+    sendPropellerLead();
     window.open(`https://wa.me/79154237269?text=${encodeURIComponent(message)}`, '_blank');
   });
 }
