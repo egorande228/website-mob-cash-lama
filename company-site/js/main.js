@@ -740,6 +740,18 @@ const sendPropellerLead = () => {
   pixel.src = postbackUrl;
 };
 
+const trackLead = (label = 'submit_application') => {
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', 'lead', {
+      event_category: 'engagement',
+      event_label: label,
+      value: 1,
+    });
+  }
+
+  sendPropellerLead();
+};
+
 if (submitButton) {
   submitButton.addEventListener('click', () => {
     const name = document.getElementById('input-name');
@@ -760,16 +772,20 @@ if (submitButton) {
       `Language: ${lang.value}`,
     ].join('\n');
 
-    if (typeof window.gtag === 'function') {
-      window.gtag('event', 'lead', {
-        event_category: 'engagement',
-        event_label: 'submit_application',
-        value: 1,
-      });
-    }
-
-    sendPropellerLead();
+    trackLead('submit_application');
     window.open(`https://wa.me/79154237269?text=${encodeURIComponent(message)}`, '_blank');
+  });
+}
+
+const leadContactButtons = document.querySelectorAll('.hero-contact-btn, .tc-manager-btn');
+if (leadContactButtons.length) {
+  leadContactButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const label = btn.classList.contains('is-telegram') || btn.classList.contains('hero-contact-tg')
+        ? 'telegram_click'
+        : 'whatsapp_click';
+      trackLead(label);
+    });
   });
 }
 
