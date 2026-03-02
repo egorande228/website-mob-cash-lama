@@ -748,6 +748,14 @@ if (submitButton) {
       `Language: ${lang.value}`,
     ].join('\n');
 
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', 'lead', {
+        event_category: 'engagement',
+        event_label: 'submit_application',
+        value: 1,
+      });
+    }
+
     window.open(`https://wa.me/79154237269?text=${encodeURIComponent(message)}`, '_blank');
   });
 }
