@@ -1005,7 +1005,7 @@ main,
 .external-platform-btn {
   position: absolute;
   left: 50%;
-  bottom: 16px;
+  bottom: -12px;
   transform: translateX(-50%);
   width: min(390px, 88%);
   min-height: 62px;
