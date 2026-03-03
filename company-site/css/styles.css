@@ -1002,6 +1002,40 @@ main,
   animation: text-wave 4s ease-in-out infinite;
 }
 
+.external-platform-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 18px;
+  transform: translateX(-50%);
+  width: min(380px, 86%);
+  min-height: 64px;
+  border: 4px solid #f8bb1d;
+  border-radius: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  color: #f4f8ff;
+  background: linear-gradient(180deg, rgba(16, 39, 106, 0.36), rgba(8, 24, 72, 0.62));
+  box-shadow: 0 12px 22px rgba(1, 8, 28, 0.35);
+  z-index: 3;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.external-platform-btn:hover,
+.external-platform-btn:focus-visible {
+  transform: translateX(-50%) translateY(-2px);
+  border-color: #ffd25f;
+  box-shadow: 0 16px 26px rgba(1, 8, 28, 0.5);
+  outline: none;
+}
+
 .float-item {
   position: absolute;
   z-index: 1;
@@ -1515,6 +1549,21 @@ main,
 
   .hero-contact-wa .hero-contact-icon {
     transform: perspective(260px) rotateX(8deg) rotateZ(4deg);
+  }
+
+  .external-platform-btn {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    transform: none;
+    margin-top: 1rem;
+    width: min(360px, 92%);
+    min-height: 58px;
+  }
+
+  .external-platform-btn:hover,
+  .external-platform-btn:focus-visible {
+    transform: translateY(-2px);
   }
 }
 

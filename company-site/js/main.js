@@ -51,6 +51,7 @@ const I18N = {
       hero_cta: 'Become an Agent',
       hero_help: '',
       hero_subbrand: 'Partner Program',
+      external_platform_cta: 'Our Site',
       metric_deposit: 'Deposit Commission',
       metric_withdrawal: 'Withdrawal Commission',
       metric_support: 'Manager Support',
@@ -176,6 +177,7 @@ const I18N = {
       hero_cta: 'Convertirme en Agente',
       hero_help: '',
       hero_subbrand: 'Agente MobCash',
+      external_platform_cta: 'Ir a la Plataforma',
       metric_deposit: 'Comision por deposito',
       metric_withdrawal: 'Comision por retiro',
       metric_support: 'Soporte de manager',
@@ -301,6 +303,7 @@ const I18N = {
       hero_cta: 'Tornar-me Agente',
       hero_help: '',
       hero_subbrand: 'Programa de Parceiros',
+      external_platform_cta: 'Acesse a plataforma',
       metric_deposit: 'Comissao de deposito',
       metric_withdrawal: 'Comissao de saque',
       metric_support: 'Suporte do manager',
@@ -470,6 +473,8 @@ const applyTranslations = () => {
     setText('.tc-hero-copy > p', tr('index', 'hero_desc'));
     setText('.tc-hero-copy .cta', tr('index', 'hero_cta'));
     setText('.hero-subbrand', tr('index', 'hero_subbrand'));
+    setText('.external-platform-btn', tr('index', 'external_platform_cta'));
+    setAttr('.external-platform-btn', 'aria-label', tr('index', 'external_platform_cta'));
 
     setText('.tc-metrics article:nth-child(1) span', tr('index', 'metric_deposit'));
     setText('.tc-metrics article:nth-child(2) span', tr('index', 'metric_withdrawal'));
@@ -799,6 +804,17 @@ if (leadContactButtons.length) {
         value: 1,
       });
       trackLead(eventName);
+    });
+  });
+}
+
+const externalPlatformButton = document.querySelector('.external-platform-btn');
+if (externalPlatformButton) {
+  externalPlatformButton.addEventListener('click', () => {
+    trackGtagEvent('platform_link_click', {
+      event_category: 'engagement',
+      link_url: externalPlatformButton.href,
+      value: 1,
     });
   });
 }
