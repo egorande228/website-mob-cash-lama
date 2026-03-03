@@ -746,14 +746,18 @@ const sendPropellerLead = () => {
   pixel.src = postbackUrl;
 };
 
-const trackLead = (label = 'submit_application') => {
+const trackGtagEvent = (eventName, params = {}) => {
   if (typeof window.gtag === 'function') {
-    window.gtag('event', 'lead', {
-      event_category: 'engagement',
-      event_label: label,
-      value: 1,
-    });
+    window.gtag('event', eventName, params);
   }
+};
+
+const trackLead = (label = 'submit_application') => {
+  trackGtagEvent('lead', {
+    event_category: 'engagement',
+    event_label: label,
+    value: 1,
+  });
 
   sendPropellerLead();
 };
@@ -787,10 +791,14 @@ const leadContactButtons = document.querySelectorAll('.hero-contact-btn, .tc-man
 if (leadContactButtons.length) {
   leadContactButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
-      const label = btn.classList.contains('is-telegram') || btn.classList.contains('hero-contact-tg')
+      const eventName = btn.classList.contains('is-telegram') || btn.classList.contains('hero-contact-tg')
         ? 'telegram_click'
         : 'whatsapp_click';
-      trackLead(label);
+      trackGtagEvent(eventName, {
+        event_category: 'engagement',
+        value: 1,
+      });
+      trackLead(eventName);
     });
   });
 }
