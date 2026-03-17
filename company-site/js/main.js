@@ -761,13 +761,9 @@ const sendBemobLead = () => {
 
   const postbackUrl = `https://ctxic.bemobtrcks.com/conversion.txt?cid=${encodeURIComponent(clickId)}&payout=0`;
 
-  fetch(postbackUrl, {
-    method: 'GET',
-    mode: 'no-cors',
-    keepalive: true,
-  }).catch(() => {
-    // Ignore network errors: this is a fire-and-forget tracking request.
-  });
+  // Use an image beacon because the CTA immediately opens Telegram/WhatsApp.
+  const pixel = new Image();
+  pixel.src = postbackUrl;
 };
 
 const trackGtagEvent = (eventName, params = {}) => {
