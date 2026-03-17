@@ -739,9 +739,13 @@ if (methodButtons.length && contactLabel && contactInput) {
 }
 
 const submitButton = document.getElementById('submitApplication');
-const sendPropellerLead = () => {
+const getTrackingClickId = () => {
   const params = new URLSearchParams(window.location.search);
-  const visitorId = params.get('visitor_id') || params.get('click_id') || params.get('clickid');
+  return params.get('click_id') || params.get('clickid') || params.get('visitor_id');
+};
+
+const sendPropellerLead = () => {
+  const visitorId = getTrackingClickId();
   if (!visitorId) return;
 
   const postbackUrl = `https://ad.propellerads.com/conversion.php?aid=3892604&pid=&tid=152749&visitor_id=${encodeURIComponent(visitorId)}&payout=1`;
@@ -749,6 +753,21 @@ const sendPropellerLead = () => {
   // Fire-and-forget request to register a lead in Propeller.
   const pixel = new Image();
   pixel.src = postbackUrl;
+};
+
+const sendBemobLead = () => {
+  const clickId = getTrackingClickId();
+  if (!clickId) return;
+
+  const postbackUrl = `https://ctxic.bemobtrcks.com/conversion.txt?cid=${encodeURIComponent(clickId)}&payout=0`;
+
+  fetch(postbackUrl, {
+    method: 'GET',
+    mode: 'no-cors',
+    keepalive: true,
+  }).catch(() => {
+    // Ignore network errors: this is a fire-and-forget tracking request.
+  });
 };
 
 const trackGtagEvent = (eventName, params = {}) => {
@@ -765,6 +784,7 @@ const trackLead = (label = 'submit_application') => {
   });
 
   sendPropellerLead();
+  sendBemobLead();
 };
 
 if (submitButton) {
