@@ -759,7 +759,7 @@ const sendBemobLead = () => {
   const clickId = getTrackingClickId();
   if (!clickId) return;
 
-  const postbackUrl = `https://ctxic.bemobtrcks.com/conversion.txt?cid=${encodeURIComponent(clickId)}&payout=0`;
+  const postbackUrl = `https://ctxic.bemobtrcks.com/conversion.gif?cid=${encodeURIComponent(clickId)}&payout=0`;
 
   // Use an image beacon because the CTA immediately opens Telegram/WhatsApp.
   const pixel = new Image();
