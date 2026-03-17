@@ -755,16 +755,6 @@ const sendPropellerLead = () => {
   pixel.src = postbackUrl;
 };
 
-const sendBemobLead = () => {
-  const clickId = getTrackingClickId();
-  if (!clickId) return;
-
-  const postbackUrl = `https://ctxic.bemobtrk.com/conversion.gif?cid=${encodeURIComponent(clickId)}&payout=0`;
-
-  // Use an image beacon because the CTA immediately opens Telegram/WhatsApp.
-  const pixel = new Image();
-  pixel.src = postbackUrl;
-};
 
 const trackGtagEvent = (eventName, params = {}) => {
   if (typeof window.gtag === 'function') {
@@ -780,7 +770,6 @@ const trackLead = (label = 'submit_application') => {
   });
 
   sendPropellerLead();
-  sendBemobLead();
 };
 
 if (submitButton) {
