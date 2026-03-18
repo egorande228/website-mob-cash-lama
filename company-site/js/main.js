@@ -790,9 +790,12 @@ const leadContactButtons = document.querySelectorAll('.hero-contact-btn, .tc-man
 if (leadContactButtons.length) {
   leadContactButtons.forEach((btn) => {
     btn.addEventListener('click', () => {
-      const eventName = btn.classList.contains('is-telegram') || btn.classList.contains('hero-contact-tg')
-        ? 'telegram_click'
-        : 'whatsapp_click';
+      const isTelegram = btn.classList.contains('is-telegram') || btn.classList.contains('hero-contact-tg');
+      const isTopButton = btn.classList.contains('hero-contact-btn');
+      const eventName = isTelegram
+        ? (isTopButton ? 'telegram_click_top' : 'telegram_click_bottom')
+        : (isTopButton ? 'whatsapp_click_top' : 'whatsapp_click_bottom');
+
       trackGtagEvent(eventName, {
         event_category: 'engagement',
         value: 1,
