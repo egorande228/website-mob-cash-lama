@@ -1,0 +1,7 @@
+priority_tier,brand,target_country,target_language,main_query,domain,status,registrar,purchase_date,renewal_date,template_type,site_type,gsc_property,ga4_property,sitemap_url,robots_url,index_status,main_page_url,top_keyword_position,secondary_queries,content_status,meta_status,schema_status,internal_links_status,backlinks_status,last_update,next_action,notes
+1,1xbet,,,"1xbet + country",,planned,,,,,,,
+1,melbet,,,"melbet + country",,planned,,,,,,,
+2,1xbet,,,"brand + country + partner",,planned,,,,,,,
+2,melbet,,,"brand + country + agent",,planned,,,,,,,
+3,1xbet,,,"brand + country + affiliate",,planned,,,,,,,
+3,melbet,,,"brand + country + bonus",,planned,,,,,,,
