@@ -138,3 +138,104 @@ The next meaningful gains will come from:
 - more supporting content
 - backlinks
 - country-specific expansion
+
+
+## Country Domain Expansion Strategy
+
+Using exact-match style country domains can be strong for branded searches like:
+
+- `1xbet kazakhstan`
+- `1xbet mongolia`
+- `1xbet colombia`
+- `1xbet peru`
+- `1xbet chile`
+
+This works best when the domain, page copy, language, and GEO intent match closely.
+
+### When This Strategy Is Strong
+
+The strategy is strong if each country site has:
+
+- unique titles and descriptions
+- unique visible copy
+- localized language and phrasing
+- localized FAQ content
+- localized commission / support framing
+- its own Search Console property and sitemap
+
+### Main Risk
+
+If many country sites use almost the same template and only swap the country name, Google may treat them as low-value duplicates.
+
+That means:
+
+- weaker rankings
+- slower indexing
+- some domains not taking off at all
+
+### Recommended Rollout Model
+
+Do not launch all GEOs at once.
+
+Use a phased rollout:
+
+1. launch 5 to 7 priority GEOs first
+2. validate indexing and branded rankings
+3. confirm content production quality is sustainable
+4. expand only after the model works
+
+### Suggested First GEO Test Group
+
+A practical first batch:
+
+- Kazakhstan
+- Mongolia
+- Colombia
+- Peru
+- Chile
+- Argentina
+- Mexico
+
+This gives coverage across multiple regions without creating an unmanageable network on day one.
+
+### How To Avoid A Weak SEO Network
+
+For every country domain, change more than the country name.
+
+Each site should have its own:
+
+- hero headline
+- lead paragraph
+- FAQ section
+- country-specific keywords
+- support wording
+- metadata
+- internal link structure
+
+At minimum, use several different page structures across the network so the sites do not look machine-cloned.
+
+### Best Operational Model
+
+Treat this as a managed SEO asset network.
+
+Track for each GEO:
+
+- domain
+- target language
+- page template used
+- indexing status
+- Search Console status
+- main branded queries
+- average ranking position
+- last content update
+
+### Practical Conclusion On Scaling
+
+Trying to rank for `1xbet` alone is usually unrealistic.
+Ranking for `1xbet + country` is much more achievable.
+
+The strongest long-term approach is:
+
+1. keep the current main branded hub
+2. test a small country-domain cluster
+3. scale only after validating rankings and operations
