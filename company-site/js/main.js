@@ -744,16 +744,6 @@ const getTrackingClickId = () => {
   return params.get('click_id') || params.get('clickid') || params.get('visitor_id');
 };
 
-const sendPropellerLead = () => {
-  const visitorId = getTrackingClickId();
-  if (!visitorId) return;
-
-  const postbackUrl = `https://ad.propellerads.com/conversion.php?aid=3892604&pid=&tid=152749&visitor_id=${encodeURIComponent(visitorId)}&payout=1`;
-
-  // Fire-and-forget request to register a lead in Propeller.
-  const pixel = new Image();
-  pixel.src = postbackUrl;
-};
 
 
 const trackGtagEvent = (eventName, params = {}) => {
@@ -769,7 +759,6 @@ const trackLead = (label = 'submit_application') => {
     value: 1,
   });
 
-  sendPropellerLead();
 };
 
 if (submitButton) {
@@ -816,7 +805,7 @@ if (leadContactButtons.length) {
 const externalPlatformButton = document.querySelector('.external-platform-btn');
 if (externalPlatformButton) {
   externalPlatformButton.addEventListener('click', () => {
-    trackGtagEvent('platform_link_click', {
+    trackGtagEvent('ref_link_open', {
       event_category: 'engagement',
       link_url: externalPlatformButton.href,
       value: 1,
