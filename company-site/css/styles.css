@@ -1037,9 +1037,10 @@ main,
 }
 
 .external-platform-btn::after {
-  content: "↗";
-  font-size: 1rem;
-  opacity: 0.88;
+  content: "🚀";
+  font-size: 0.82rem;
+  line-height: 1;
+  opacity: 0.92;
   transform: translateY(-1px);
 }
 
