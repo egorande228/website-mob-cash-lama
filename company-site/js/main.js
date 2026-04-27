@@ -607,6 +607,9 @@ if (langButtons.length) {
       if (!SUPPORTED_LANGS.includes(nextLang) || nextLang === currentLang) return;
       currentLang = nextLang;
       localStorage.setItem(I18N_STORAGE_KEY, currentLang);
+      pushDataLayerEvent('language_switch', {
+        language_selected: nextLang,
+      });
       applyTranslations();
     });
   });
@@ -744,7 +747,31 @@ const getTrackingClickId = () => {
   return params.get('click_id') || params.get('clickid') || params.get('visitor_id');
 };
 
+const getPartnerProgram = () => {
+  const path = window.location.pathname.toLowerCase();
+  if (path.includes('partner')) return 'affiliate_partner';
+  return 'mobcash_agent';
+};
 
+const getCountryCode = () => {
+  const locale = navigator.language || '';
+  const country = locale.split('-')[1];
+  return country ? country.toUpperCase() : 'GLOBAL';
+};
+
+const pushDataLayerEvent = (eventName, params = {}) => {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    event: eventName,
+    partner_program: getPartnerProgram(),
+    country: getCountryCode(),
+    ...params,
+  });
+};
+
+const getElementLabel = (element) => (
+  (element.textContent || element.getAttribute('aria-label') || '').trim().replace(/\s+/g, ' ')
+);
 
 const trackGtagEvent = (eventName, params = {}) => {
   if (typeof window.gtag === 'function') {
@@ -752,20 +779,38 @@ const trackGtagEvent = (eventName, params = {}) => {
   }
 };
 
-const trackLead = (label = 'submit_application') => {
+const trackLead = (label = 'submit_application', params = {}) => {
   trackGtagEvent('lead', {
     event_category: 'engagement',
     event_label: label,
     value: 1,
+    ...params,
   });
-
 };
+
+let formStartTracked = false;
+const trackFormStart = (formId = 'contact-manager') => {
+  if (formStartTracked) return;
+  formStartTracked = true;
+  pushDataLayerEvent('form_start', {
+    form_id: formId,
+  });
+};
+
+const registrationInputs = document.querySelectorAll('#input-name, #input-contact, #input-lang, .tc-method');
+registrationInputs.forEach((element) => {
+  element.addEventListener('focus', () => trackFormStart(), { once: true });
+  element.addEventListener('click', () => trackFormStart(), { once: true });
+});
 
 if (submitButton) {
   submitButton.addEventListener('click', () => {
     const name = document.getElementById('input-name');
     const contact = document.getElementById('input-contact');
     const lang = document.getElementById('input-lang');
+    const formId = 'contact-manager';
+
+    trackFormStart(formId);
 
     if (!name || !contact || !lang || !name.value.trim() || !contact.value.trim()) {
       window.alert(tr('common', 'fill_required'));
@@ -781,7 +826,15 @@ if (submitButton) {
       `Language: ${lang.value}`,
     ].join('\n');
 
-    trackLead('submit_application');
+    pushDataLayerEvent('form_submit', {
+      form_id: formId,
+      contact_method: selectedMethod,
+      language_selected: lang.value,
+    });
+    trackLead('submit_application', {
+      form_id: formId,
+      contact_method: selectedMethod,
+    });
     window.open(`https://wa.me/79154237269?text=${encodeURIComponent(message)}`, '_blank');
   });
 }
@@ -796,23 +849,44 @@ if (leadContactButtons.length) {
         ? (isTopButton ? 'telegram_click_top' : 'telegram_click_bottom')
         : (isTopButton ? 'whatsapp_click_top' : 'whatsapp_click_bottom');
 
-      trackGtagEvent(eventName, {
+      const eventParams = {
         event_category: 'engagement',
+        cta_label: getElementLabel(btn),
+        destination_url: btn.href,
         value: 1,
+      };
+      pushDataLayerEvent('cta_click', eventParams);
+      pushDataLayerEvent(isTelegram ? 'telegram_click' : 'whatsapp_click', {
+        destination_url: btn.href,
       });
-      trackLead(eventName);
+      trackGtagEvent(eventName, eventParams);
+      trackLead(eventName, eventParams);
     });
   });
 }
 
+const ctaLinks = document.querySelectorAll('a.cta');
+ctaLinks.forEach((link) => {
+  link.addEventListener('click', () => {
+    pushDataLayerEvent('cta_click', {
+      cta_label: getElementLabel(link),
+      destination_url: link.href,
+    });
+  });
+});
+
 const externalPlatformButton = document.querySelector('.external-platform-btn');
 if (externalPlatformButton) {
   externalPlatformButton.addEventListener('click', () => {
-    trackGtagEvent('ref_link_open', {
+    const eventParams = {
       event_category: 'engagement',
+      cta_label: getElementLabel(externalPlatformButton),
+      destination_url: externalPlatformButton.href,
       link_url: externalPlatformButton.href,
       value: 1,
-    });
+    };
+    pushDataLayerEvent('cta_click', eventParams);
+    trackGtagEvent('ref_link_open', eventParams);
   });
 }
 
