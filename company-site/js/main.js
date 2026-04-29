@@ -398,9 +398,9 @@ const I18N = {
 };
 
 const pageType = (() => {
-  const path = window.location.pathname;
-  if (path.endsWith('/agent.html') || path.endsWith('agent.html')) return 'agent';
-  if (path.endsWith('/partner.html') || path.endsWith('partner.html')) return 'partner';
+  const path = window.location.pathname.replace(/\/$/, '');
+  if (path.endsWith('/agent') || path.endsWith('/agent.html') || path.endsWith('agent.html')) return 'agent';
+  if (path.endsWith('/partner') || path.endsWith('/partner.html') || path.endsWith('partner.html')) return 'partner';
   return 'index';
 })();
 
